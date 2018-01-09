@@ -11,6 +11,7 @@ body {
 }
 
 h1{
+	font-weight:bolder;
 	display:none;
 	font-weight: 900;
 	font-size:58px;
@@ -26,6 +27,8 @@ h1{
 }
 
 .name p{
+	font-weight:bolder;
+	letter-spacing: 6px;
 	display:none;
 	color:#CA2222;
 	font-size:37px;
