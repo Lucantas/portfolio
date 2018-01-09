@@ -246,6 +246,7 @@ h1{
 footer {
 	padding-bottom:2em;
 	text-align: center;
+	font-style:normal;
 	color: white;
 	font-size: 1.2em
 }
