@@ -1,0 +1,83 @@
+body, html {
+    background: url(../imgs/bg.jpg);
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #212121;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #212121;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+h1{
+    color:#614653;
+    font-size: 3.1em;
+    line-height: 1.5em;
+    font-weight: 900;
+}
+h2{
+    font-size:2.1em;
+}
+section.container-fluid div.container{
+    margin-top: 7%;
+    background:#fff;
+    max-width: 740px;
+    box-shadow:0 19px 38px rgba(0,0,0,.3),0 15px 12px rgba(0,0,0,.22);
+    padding-bottom:3%;
+}
+
+.external-buttons{
+    max-width: 500px;
+    margin-top: 2%;
+    background-color: #844e5c;
+    border-color: #844E49;
+}
+.btn-primary:hover{
+    background-color:#643a50;
+    border-color:#643a50;
+}
+.btn-primary:active{
+    background-color: #1e1526;
+    border-color: #1E151A;
+}
+
+/* icons animations */
+
+.icons{
+    margin-top: 5%;
+}
+
+.icons a{
+    color:#212121;
+}
+
+.fa-stack:hover {
+	transition: 1.2s;
+	transform: rotate(360deg);
+}
+
+.fa-lg {
+	margin-bottom: 20px;
+}
+
+.fa-twitter:hover {
+	border-radius: 50%;
+	color: white;
+	background-color: #1da1f2;
+}
+
+.fa-linkedin:hover {
+	border-radius: 50%;
+	color: white;
+	background-color: #0077B5;
+}
+
+.fa-github:hover {
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+}
+
+.fa-free-code-camp:hover {
+	border-radius: 50%;
+	color: white;
+	background-color: darkgreen;
+}
