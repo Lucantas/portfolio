@@ -81,7 +81,6 @@ header.site nav{max-width:1120px;margin:0 auto;padding:16px clamp(20px,5vw,48px)
 .card.featured{background:var(--sv)}
 .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .card-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
-.card-arrow{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--violet);line-height:1}
 .card h3{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:18px;color:var(--fg);margin:14px 0 0}
 .card-desc{font-size:14px;line-height:1.6;color:var(--muted);margin:8px 0 0}
 .card-metric{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:var(--accent);margin:14px 0 0}
@@ -512,7 +511,6 @@ body.locked{overflow:hidden}
       var card = el('article', 'card' + (p.featured ? ' featured' : ''));
       var top = el('div', 'card-top');
       top.appendChild(el('span', 'card-meta', p.meta));
-      top.appendChild(el('span', 'card-arrow', '↗'));
       card.appendChild(top);
       card.appendChild(el('h3', null, p.title));
       card.appendChild(el('p', 'card-desc', p.desc));
@@ -526,10 +524,12 @@ body.locked{overflow:hidden}
         caseLink.href = '#case';
         links.appendChild(caseLink);
       }
-      var askDemo = el('button', 'card-ext', t().askDemo);
-      askDemo.type = 'button';
-      askDemo.addEventListener('click', openContact);
-      links.appendChild(askDemo);
+      if (!p.isCase) {
+        var askDemo = el('button', 'card-ext', t().askDemo);
+        askDemo.type = 'button';
+        askDemo.addEventListener('click', openContact);
+        links.appendChild(askDemo);
+      }
       card.appendChild(links);
       grid.appendChild(card);
     });
