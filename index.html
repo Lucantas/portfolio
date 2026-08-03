@@ -7,13 +7,13 @@
 <meta name="description" content="Full-stack engineer building fast, maintainable web apps. Go, Python and .NET on the backend, React / Next.js on the front.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-[data-theme="dark"]{--bg:#0A0A0B;--surface:#141416;--sv:#15101F;--chip:#1E1235;--border:#2A2A2E;--bv:#3B2560;--fg:#F5F5F4;--muted:#A1A1A6;--faint:#6B6B70;--violet:#A855F7;--violet-h:#B76DF8;--violet-fg:#F5EEFF;--accent:#C9B6FF;--accent-h:#E4D8FF;--nav-scrim:rgba(10,10,11,0.72);--modal-scrim:rgba(6,6,7,0.78);}
-[data-theme="light"]{--bg:#FAFAF9;--surface:#FFFFFF;--sv:#F4EFFC;--chip:#F1EBFC;--border:#E6E4E0;--bv:#DCCBF7;--fg:#1A1620;--muted:#57545E;--faint:#8B8891;--violet:#7C3AED;--violet-h:#6D28D9;--violet-fg:#FFFFFF;--accent:#6D28D9;--accent-h:#5B21B6;--nav-scrim:rgba(250,250,249,0.82);--modal-scrim:rgba(26,22,32,0.5);}
+[data-theme="dark"]{--bg:#0A0A0B;--surface:#141416;--sv:#131218;--chip:#1E1C26;--border:#2A2A2E;--bv:#3A374A;--fg:#F5F5F4;--muted:#A1A1A6;--faint:#6B6B70;--violet:#5E5878;--violet-h:#6B6488;--violet-fg:#F5F4F8;--accent:#B3ACC9;--accent-h:#CCC6DE;--nav-scrim:rgba(10,10,11,0.72);--modal-scrim:rgba(6,6,7,0.78);}
+[data-theme="light"]{--bg:#FAFAF9;--surface:#FFFFFF;--sv:#F1F0F5;--chip:#EFEDF4;--border:#E6E4E0;--bv:#CCC8D9;--fg:#1A1620;--muted:#57545E;--faint:#8B8891;--violet:#544E6B;--violet-h:#433E56;--violet-fg:#FFFFFF;--accent:#544E6B;--accent-h:#433E56;--nav-scrim:rgba(250,250,249,0.82);--modal-scrim:rgba(26,22,32,0.5);}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Space Grotesk',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
 a{color:var(--accent);text-decoration:none}
 a:hover{color:var(--accent-h)}
 ::selection{background:var(--violet);color:var(--violet-fg)}
@@ -21,7 +21,7 @@ a:hover{color:var(--accent-h)}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:6px}
 ::-webkit-scrollbar-thumb:hover{background:var(--bv)}
-input,textarea{font-family:'Inter',sans-serif}
+input,textarea{font-family:'Space Grotesk',sans-serif}
 input:focus,textarea:focus{outline:none;border-color:var(--violet)!important}
 input::placeholder,textarea::placeholder{color:var(--faint)}
 .container{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,48px);padding-right:clamp(20px,5vw,48px)}
@@ -114,8 +114,6 @@ button.card-ext{background:none;border:0;padding:0;cursor:pointer;text-align:lef
 .case-ctas{display:flex;flex-wrap:wrap;gap:18px;margin-top:32px}
 .case-demo{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--violet-fg);background:var(--violet);padding:10px 18px;border-radius:6px;border:0;cursor:pointer}
 .case-demo:hover{background:var(--violet-h);color:var(--violet-fg)}
-.case-src{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);align-self:center}
-.case-src:hover{color:var(--accent-h)}
 .testi-title{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 40px}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .testi{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:24px;margin:0;display:flex;flex-direction:column}
@@ -212,7 +210,7 @@ body.locked{overflow:hidden}
   <section class="container hero">
     <div class="badge"><span class="pulse"></span><span data-i18n="heroBadge">available for freelance work</span></div>
     <h1 id="heroLines"><span>Fast apps.</span><span>Clean code.</span><span>Shipped.</span></h1>
-    <p class="hero-p"><span data-i18n="heroP1">I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack — </span><span class="hl">Go, Python and .NET</span><span data-i18n="heroP2"> on the backend, </span><span class="hl">React / Next.js</span><span data-i18n="heroP3"> on the front.</span></p>
+    <p class="hero-p"><span data-i18n="heroP1">I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack: </span><span class="hl">Go, Python and .NET</span><span data-i18n="heroP2"> on the backend, </span><span class="hl">React / Next.js</span><span data-i18n="heroP3"> on the front.</span></p>
     <div class="hero-ctas">
       <button class="btn-lg" data-open-contact data-i18n="ctaHire">Contact me</button>
       <a href="#work" class="btn-ghost" data-i18n="ctaWork">View work</a>
@@ -226,7 +224,7 @@ body.locked{overflow:hidden}
         <div class="kicker" data-i18n="workKicker">01 — work</div>
         <h2 class="section-title" data-i18n="workTitle">Selected work</h2>
       </div>
-      <p class="section-lead" data-i18n="workLead">A few things I've shipped. Each one led with a measurable outcome.</p>
+      <p class="section-lead" data-i18n="workLead">A few things I've shipped. Each one moved a number that mattered.</p>
     </div>
     <div class="work-grid" id="workGrid"></div>
   </section>
@@ -276,8 +274,7 @@ body.locked{overflow:hidden}
         <div class="results-grid" id="resultsGrid"></div>
       </div>
       <div class="case-ctas">
-        <button type="button" class="case-demo" data-open-contact data-i18n="liveDemo">Ask for live/demo</button>
-        <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="case-src" data-i18n="source">source ↗</a>
+        <button type="button" class="case-demo" data-open-contact data-i18n="liveDemo">Ask for demo/repo</button>
       </div>
     </div>
   </section>
@@ -355,7 +352,7 @@ body.locked{overflow:hidden}
     <div class="form-success" id="formSuccess">
       <div class="success-icon">✓</div>
       <h3 data-i18n="successTitle">Message sent</h3>
-      <p data-i18n="successMsg">Thanks — I'll get back to you soon.</p>
+      <p data-i18n="successMsg">Thanks, I'll get back to you soon.</p>
       <button class="send-another" id="sendAnother" data-i18n="sendAnother">Send another</button>
     </div>
     <div class="modal-foot">
@@ -376,31 +373,31 @@ body.locked{overflow:hidden}
       menuWork: 'Work', menuCase: 'Case study', menuAbout: 'About',
       heroBadge: 'available for freelance work',
       heroLines: ['Fast apps.', 'Clean code.', 'Shipped.'],
-      heroP1: "I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack — ",
+      heroP1: "I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack: ",
       heroP2: ' on the backend, ', heroP3: ' on the front.',
       ctaHire: 'Contact me', ctaWork: 'View work',
       workKicker: '01 — work', workTitle: 'Selected work',
-      workLead: "A few things I've shipped. Each one led with a measurable outcome.",
+      workLead: "A few things I've shipped. Each one moved a number that mattered.",
       readCase: 'Read case study →',
       caseKicker: '02 — case study', caseSub: 'adaptive running plans · 2026',
-      caseLead: 'A running app that builds a training plan around your real life — and rewrites it when you miss a run, feel flat, or race early. Not another rigid 16-week PDF.',
+      caseLead: 'A running app that builds a training plan around your real life, then rewrites it when you miss a run, feel flat, or race early. Not another rigid 16-week PDF.',
       labelRole: 'role', labelTimeline: 'timeline', labelStack: 'stack',
-      roleVal: 'Solo full-stack — plan engine, API, app',
+      roleVal: 'Solo full-stack: plan engine, API, app',
       timelineVal: '10 weeks to launch, ongoing',
       problemH: 'The problem',
       problemP: 'Most plans are static. One missed week and the schedule is wrong for the rest of the block, so runners either quit or grind through injuries. Retention data from the beta showed people dropping off exactly when their plan stopped matching reality.',
       constraintsH: 'Constraints',
-      constraintsP: "Solo build on a tight timeline. Plans had to recompute instantly on the phone after a run, work offline-first, and stay cheap to run — no per-user ML infra budget. It also had to feel trustworthy: runners won't follow a plan they don't understand.",
+      constraintsP: "Solo build on a tight timeline. Plans had to recompute instantly on the phone after a run, work offline-first, and stay cheap to run: no per-user ML infra budget. It also had to feel trustworthy, because runners won't follow a plan they don't understand.",
       approachH: 'Approach',
-      approachP1: "I built the plan engine as a pure, deterministic Go service — same inputs, same plan — so it's testable and explainable. Next.js handles the app with optimistic updates; Redis caches the current block. Every adjustment shows ",
+      approachP1: "I built the plan engine as a pure, deterministic Go service (same inputs, same plan), so it's testable and explainable. Next.js handles the app with optimistic updates; Redis caches the current block. Every adjustment shows ",
       approachWhy: 'why', approachP2: ' it changed, in plain language.',
       tradeoffsH: 'Tradeoffs',
-      tradeoffsP: 'I chose rules over ML — less "magic," but explainable, instant, and free to run at any scale. I deferred social features to ship the core loop first. The engine’s determinism cost some flexibility, but made a class of bugs impossible and the whole thing trivially testable.',
-      resultsLabel: 'results', liveDemo: 'Ask for live/demo', askDemo: 'ask for live/demo', source: 'source ↗',
+      tradeoffsP: 'I chose rules over ML: less "magic," but explainable, instant, and free to run at any scale. I deferred social features to ship the core loop first. The engine\'s determinism cost some flexibility, but made a class of bugs impossible and the whole thing trivially testable.',
+      resultsLabel: 'results', liveDemo: 'Ask for demo/repo', askDemo: 'ask for demo/repo ↗',
       testiKicker: '03 — testimonials', testiTitle: 'What clients say',
       aboutKicker: '03 — about', aboutTitle: 'About',
-      aboutP1a: "I'm Lucas, a full-stack engineer focused on fast, maintainable web apps. I build across the stack — ",
-      aboutP1b: ' on the backend, ', aboutP1c: ' on the front — with a bias toward performance and clean code.',
+      aboutP1a: "I'm Lucas, a full-stack engineer focused on fast, maintainable web apps. I build across the stack: ",
+      aboutP1b: ' on the backend, ', aboutP1c: ' on the front, with a bias toward performance and clean code.',
       aboutP2: 'I like ambiguous briefs and owning them end to end: figure out the real problem, make the honest tradeoffs, ship, and leave code the next person can actually maintain.',
       contactKicker: '04 — contact', contactTitle: 'Available for freelance work.',
       contactLead: "Got something slow, messy, or half-built? Tell me what you're trying to ship and I'll tell you how I'd approach it.",
@@ -409,20 +406,19 @@ body.locked{overflow:hidden}
       nameLabel: 'Name', emailLabel: 'Email', msgLabel: 'Message',
       namePh: 'Your name', emailPh: 'you@company.com', msgPh: 'What are you trying to build?',
       sendBtn: 'Send message', sendingBtn: 'Sending…', successTitle: 'Message sent',
-      successMsg: "Thanks — I'll get back to you soon.", sendAnother: 'Send another',
+      successMsg: "Thanks, I'll get back to you soon.", sendAnother: 'Send another',
       orReach: 'or reach me on',
       errName: 'Please enter your name.', errEmail: 'Please enter a valid email.', errMessage: 'Please add a short message.',
       errSend: 'Could not send right now. Please try again or reach me on LinkedIn.',
       projects: [
-        { meta: '2026 · running plans app', title: 'Tempo', desc: 'Adaptive training plans for runners. Built the deterministic plan engine and the full Next.js app end to end.', metric: '500+ runners · 78% plan completion', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true, repo: 'https://github.com/Lucantas' },
-        { meta: '2026 · saas', title: 'Meridian', desc: 'Analytics dashboard for a logistics SaaS. Rebuilt reporting on a materialized aggregation pipeline.', metric: 'Report generation 41s → 1.8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' },
-        { meta: '2026 · proptech', title: 'Morada', desc: 'Condominium management app for admins and residents. Built feature-first with lint-enforced architecture boundaries and TDD end to end.', metric: '2 roles, 1 codebase · 80%+ coverage gate', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' }
+        { meta: '2026 · running plans app', title: 'Tempo', desc: 'Adaptive training plans for runners. Built the deterministic plan engine and the full Next.js app end to end.', metric: '500+ runners · 78% plan completion', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true },
+        { meta: '2026 · saas', title: 'Meridian', desc: 'Analytics dashboard for a logistics SaaS. Rebuilt reporting on a materialized aggregation pipeline.', metric: 'Report generation 41s → 1.8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false },
+        { meta: '2026 · proptech', title: 'Morada', desc: 'Condominium management app for admins and residents. Built feature-first with lint-enforced architecture boundaries and TDD end to end.', metric: '2 roles, 1 codebase · 80%+ coverage gate', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false }
       ],
       caseResults: [
         { value: '78%', label: 'plan completion' },
         { value: '500+', label: 'active runners' },
-        { value: '<50ms', label: 'plan recompute, server-side' },
-        { value: '4.8★', label: 'average store rating' }
+        { value: '<50ms', label: 'plan recompute, server-side' }
       ],
       testimonials: [
         { quote: 'Lucas took an ambiguous brief and shipped in six weeks. The app is fast and the code is clean enough that our juniors can actually maintain it.', name: 'Marina Alves', role: 'CTO, Rota Logística' },
@@ -435,31 +431,31 @@ body.locked{overflow:hidden}
       menuWork: 'Trabalhos', menuCase: 'Estudo de caso', menuAbout: 'Sobre',
       heroBadge: 'disponível para freelance',
       heroLines: ['Apps rápidos.', 'Código limpo.', 'Entregue.'],
-      heroP1: 'Eu construo apps web performáticos e sustentáveis para negócios que não podem pagar por código lento e bagunçado. Full-stack — ',
+      heroP1: 'Eu construo apps web performáticos e sustentáveis para negócios que não podem pagar por código lento e bagunçado. Full-stack: ',
       heroP2: ' no backend, ', heroP3: ' no front.',
       ctaHire: 'Fale comigo', ctaWork: 'Ver trabalhos',
       workKicker: '01 — trabalhos', workTitle: 'Trabalhos selecionados',
-      workLead: 'Algumas coisas que entreguei. Cada uma com um resultado mensurável.',
+      workLead: 'Algumas coisas que entreguei. Cada uma moveu um número que importava.',
       readCase: 'Ver estudo de caso →',
       caseKicker: '02 — estudo de caso', caseSub: 'planos de corrida adaptativos · 2026',
-      caseLead: 'Um app de corrida que monta um plano de treino em torno da sua vida real — e o reescreve quando você perde um treino, está sem energia ou antecipa uma prova. Não mais um PDF rígido de 16 semanas.',
+      caseLead: 'Um app de corrida que monta um plano de treino em torno da sua vida real, e o reescreve quando você perde um treino, está sem energia ou antecipa uma prova. Não mais um PDF rígido de 16 semanas.',
       labelRole: 'função', labelTimeline: 'prazo', labelStack: 'stack',
-      roleVal: 'Full-stack solo — motor de planos, API, app',
+      roleVal: 'Full-stack solo: motor de planos, API, app',
       timelineVal: '10 semanas até o lançamento, em curso',
       problemH: 'O problema',
       problemP: 'A maioria dos planos é estática. Uma semana perdida e o cronograma fica errado pelo resto do ciclo, então os corredores desistem ou insistem até se machucar. Os dados de retenção do beta mostraram abandono exatamente quando o plano deixava de refletir a realidade.',
       constraintsH: 'Restrições',
-      constraintsP: 'Construção solo com prazo apertado. Os planos precisavam recalcular instantaneamente no celular após cada treino, funcionar offline-first e ser baratos de rodar — sem orçamento de infra de ML por usuário. Também precisava inspirar confiança: corredores não seguem um plano que não entendem.',
+      constraintsP: 'Construção solo com prazo apertado. Os planos precisavam recalcular instantaneamente no celular após cada treino, funcionar offline-first e ser baratos de rodar: sem orçamento de infra de ML por usuário. Também precisava inspirar confiança, porque corredores não seguem um plano que não entendem.',
       approachH: 'Abordagem',
-      approachP1: 'Construí o motor de planos como um serviço Go puro e determinístico — mesmas entradas, mesmo plano — testável e explicável. O Next.js cuida do app com atualizações otimistas; o Redis faz cache do ciclo atual. Cada ajuste mostra ',
+      approachP1: 'Construí o motor de planos como um serviço Go puro e determinístico (mesmas entradas, mesmo plano), testável e explicável. O Next.js cuida do app com atualizações otimistas; o Redis faz cache do ciclo atual. Cada ajuste mostra ',
       approachWhy: 'por quê', approachP2: ' mudou, em linguagem simples.',
       tradeoffsH: 'Trade-offs',
-      tradeoffsP: 'Escolhi regras em vez de ML — menos "mágica", porém explicável, instantâneo e grátis de rodar em qualquer escala. Adiei recursos sociais para entregar o loop principal primeiro. O determinismo do motor custou alguma flexibilidade, mas tornou uma classe de bugs impossível e o sistema todo trivialmente testável.',
-      resultsLabel: 'resultados', liveDemo: 'Pedir demo ao vivo', askDemo: 'pedir demo ao vivo', source: 'código ↗',
+      tradeoffsP: 'Escolhi regras em vez de ML: menos "mágica", porém explicável, instantâneo e grátis de rodar em qualquer escala. Adiei recursos sociais para entregar o loop principal primeiro. O determinismo do motor custou alguma flexibilidade, mas tornou uma classe de bugs impossível e o sistema todo trivialmente testável.',
+      resultsLabel: 'resultados', liveDemo: 'Pedir demo/repo', askDemo: 'pedir demo/repo ↗',
       testiKicker: '03 — depoimentos', testiTitle: 'O que os clientes dizem',
       aboutKicker: '03 — sobre', aboutTitle: 'Sobre',
-      aboutP1a: 'Sou o Lucas, engenheiro full-stack focado em apps web rápidos e sustentáveis. Trabalho em toda a stack — ',
-      aboutP1b: ' no backend, ', aboutP1c: ' no front — com foco em performance e código limpo.',
+      aboutP1a: 'Sou o Lucas, engenheiro full-stack focado em apps web rápidos e sustentáveis. Trabalho em toda a stack: ',
+      aboutP1b: ' no backend, ', aboutP1c: ' no front, com foco em performance e código limpo.',
       aboutP2: 'Gosto de briefs ambíguos e de assumi-los de ponta a ponta: descobrir o problema real, fazer trade-offs honestos, entregar e deixar um código que a próxima pessoa consiga manter.',
       contactKicker: '04 — contato', contactTitle: 'Disponível para freelance.',
       contactLead: 'Tem algo lento, bagunçado ou pela metade? Me conte o que você quer entregar e eu digo como eu abordaria.',
@@ -468,20 +464,19 @@ body.locked{overflow:hidden}
       nameLabel: 'Nome', emailLabel: 'E-mail', msgLabel: 'Mensagem',
       namePh: 'Seu nome', emailPh: 'voce@empresa.com', msgPh: 'O que você quer construir?',
       sendBtn: 'Enviar mensagem', sendingBtn: 'Enviando…', successTitle: 'Mensagem enviada',
-      successMsg: 'Obrigado — retorno em breve.', sendAnother: 'Enviar outra',
+      successMsg: 'Obrigado! Retorno em breve.', sendAnother: 'Enviar outra',
       orReach: 'ou me encontre em',
       errName: 'Digite seu nome.', errEmail: 'Digite um e-mail válido.', errMessage: 'Escreva uma breve mensagem.',
       errSend: 'Não foi possível enviar agora. Tente de novo ou me chame no LinkedIn.',
       projects: [
-        { meta: '2026 · app de planos de corrida', title: 'Tempo', desc: 'Planos de treino adaptativos para corredores. Construí o motor de planos determinístico e todo o app Next.js de ponta a ponta.', metric: '500+ corredores · 78% de conclusão de plano', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true, repo: 'https://github.com/Lucantas' },
-        { meta: '2026 · saas', title: 'Meridian', desc: 'Dashboard de analytics para um SaaS de logística. Reconstruí os relatórios sobre um pipeline de agregação materializada.', metric: 'Geração de relatório 41s → 1,8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' },
-        { meta: '2026 · proptech', title: 'Morada', desc: 'App de gestão de condomínios para síndicos e moradores. Construído feature-first com limites de arquitetura garantidos por lint e TDD de ponta a ponta.', metric: '2 perfis, 1 codebase · cobertura mínima de 80%', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' }
+        { meta: '2026 · app de planos de corrida', title: 'Tempo', desc: 'Planos de treino adaptativos para corredores. Construí o motor de planos determinístico e todo o app Next.js de ponta a ponta.', metric: '500+ corredores · 78% de conclusão de plano', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true },
+        { meta: '2026 · saas', title: 'Meridian', desc: 'Dashboard de analytics para um SaaS de logística. Reconstruí os relatórios sobre um pipeline de agregação materializada.', metric: 'Geração de relatório 41s → 1,8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false },
+        { meta: '2026 · proptech', title: 'Morada', desc: 'App de gestão de condomínios para síndicos e moradores. Construído feature-first com limites de arquitetura garantidos por lint e TDD de ponta a ponta.', metric: '2 perfis, 1 codebase · cobertura mínima de 80%', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false }
       ],
       caseResults: [
         { value: '78%', label: 'conclusão de plano' },
         { value: '500+', label: 'corredores ativos' },
-        { value: '<50ms', label: 'recálculo do plano, no servidor' },
-        { value: '4.8★', label: 'nota média na loja' }
+        { value: '<50ms', label: 'recálculo do plano, no servidor' }
       ],
       testimonials: [
         { quote: 'Lucas pegou um brief ambíguo e entregou em seis semanas. O app é rápido e o código é limpo o bastante para nossos juniores manterem.', name: 'Marina Alves', role: 'CTO, Rota Logística' },
@@ -534,10 +529,7 @@ body.locked{overflow:hidden}
       var askDemo = el('button', 'card-ext', t().askDemo);
       askDemo.type = 'button';
       askDemo.addEventListener('click', openContact);
-      var repo = el('a', 'card-ext', 'repo ↗');
-      repo.href = p.repo; repo.target = '_blank'; repo.rel = 'noopener';
       links.appendChild(askDemo);
-      links.appendChild(repo);
       card.appendChild(links);
       grid.appendChild(card);
     });
