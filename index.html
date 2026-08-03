@@ -1,52 +1,694 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lucas Dantas</title>
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="libs/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="libs/font-awesome.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Dantas — Full-stack Engineer</title>
+<meta name="description" content="Full-stack engineer building fast, maintainable web apps. Go, Python and .NET on the backend, React / Next.js on the front.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+[data-theme="dark"]{--bg:#0A0A0B;--surface:#141416;--sv:#15101F;--chip:#1E1235;--border:#2A2A2E;--bv:#3B2560;--fg:#F5F5F4;--muted:#A1A1A6;--faint:#6B6B70;--violet:#A855F7;--violet-h:#B76DF8;--violet-fg:#F5EEFF;--accent:#C9B6FF;--accent-h:#E4D8FF;--nav-scrim:rgba(10,10,11,0.72);--modal-scrim:rgba(6,6,7,0.78);}
+[data-theme="light"]{--bg:#FAFAF9;--surface:#FFFFFF;--sv:#F4EFFC;--chip:#F1EBFC;--border:#E6E4E0;--bv:#DCCBF7;--fg:#1A1620;--muted:#57545E;--faint:#8B8891;--violet:#7C3AED;--violet-h:#6D28D9;--violet-fg:#FFFFFF;--accent:#6D28D9;--accent-h:#5B21B6;--nav-scrim:rgba(250,250,249,0.82);--modal-scrim:rgba(26,22,32,0.5);}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-h)}
+::selection{background:var(--violet);color:var(--violet-fg)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:var(--bv)}
+input,textarea{font-family:'Inter',sans-serif}
+input:focus,textarea:focus{outline:none;border-color:var(--violet)!important}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+.container{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,48px);padding-right:clamp(20px,5vw,48px)}
+.mono{font-family:'JetBrains Mono',monospace}
+.grotesk{font-family:'Space Grotesk',sans-serif}
+header.site{position:sticky;top:0;z-index:50;background:transparent;border-bottom:.5px solid transparent;transition:background 200ms ease,border-color 200ms ease}
+header.site.scrolled{background:var(--nav-scrim);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--border)}
+header.site nav{max-width:1120px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--fg);letter-spacing:-.01em}
+.logo .dot{color:var(--violet)}
+.nav-desktop{display:flex;align-items:center;gap:clamp(18px,2.6vw,32px)}
+.nav-link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);transition:color 150ms ease}
+.nav-link:hover{color:var(--fg)}
+.seg{display:flex;align-items:center;border:.5px solid var(--border);border-radius:6px;overflow:hidden;height:34px}
+.seg button{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:0 12px;height:100%;display:flex;align-items:center;border:none;cursor:pointer;transition:background 150ms ease,color 150ms ease;background:transparent;color:var(--muted)}
+.seg button.active{background:var(--violet);color:var(--violet-fg)}
+.icon-btn{background:transparent;border:.5px solid var(--border);border-radius:6px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--fg);font-size:14px;cursor:pointer;transition:border-color 150ms ease;padding:0}
+.icon-btn:hover{border-color:var(--bv)}
+.btn-primary{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--violet-fg);background:var(--violet);padding:9px 18px;border-radius:6px;border:none;cursor:pointer;transition:background 150ms ease}
+.btn-primary:hover{background:var(--violet-h);color:var(--violet-fg)}
+.nav-mobile{display:none;align-items:center;gap:10px}
+.nav-mobile .icon-btn{width:40px;height:40px;font-size:15px}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:transparent;border:.5px solid var(--border);border-radius:6px;padding:10px;cursor:pointer}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--fg)}
+@media (max-width:719.98px){.nav-desktop{display:none}.nav-mobile{display:flex}}
+.menu-overlay{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;flex-direction:column;padding:20px clamp(20px,5vw,48px)}
+.menu-overlay.open{display:flex}
+.menu-top{display:flex;align-items:center;justify-content:space-between}
+.menu-top-right{display:flex;gap:10px;align-items:center}
+.menu-top .seg{height:38px}
+.menu-close{background:transparent;border:.5px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--fg);font-family:'JetBrains Mono',monospace;font-size:20px;line-height:1;cursor:pointer}
+.menu-links{display:flex;flex-direction:column;gap:8px;margin-top:48px}
+.menu-links a{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:500;color:var(--fg);padding:12px 0;border-bottom:.5px solid var(--border)}
+.menu-cta{margin-top:auto;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:var(--violet-fg);background:var(--violet);padding:14px;border-radius:6px;border:none;cursor:pointer}
+.hero{padding-top:clamp(56px,12vw,128px);padding-bottom:clamp(48px,8vw,88px)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);border:.5px solid var(--border);border-radius:100px;padding:6px 12px;margin-bottom:28px;white-space:nowrap}
+.badge .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--violet)}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,8vw,60px);line-height:1.03;letter-spacing:-.02em;margin:0;max-width:16ch}
+.hero h1 span{display:block}
+.hero-p{font-size:clamp(16px,2.4vw,19px);line-height:1.6;color:var(--muted);max-width:52ch;margin:24px 0 0}
+.hl{color:var(--fg)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn-lg{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;color:var(--violet-fg);background:var(--violet);padding:12px 22px;border-radius:6px;border:none;cursor:pointer;transition:background 150ms ease}
+.btn-lg:hover{background:var(--violet-h)}
+.btn-ghost{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;color:var(--fg);background:transparent;border:.5px solid var(--border);padding:12px 22px;border-radius:6px;transition:border-color 150ms ease;display:inline-block}
+.btn-ghost:hover{border-color:var(--bv);color:var(--fg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);background:var(--chip);border:.5px solid var(--bv);padding:5px 10px;border-radius:6px}
+.section{padding-top:clamp(48px,8vw,88px);padding-bottom:clamp(48px,8vw,88px)}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--violet);margin-bottom:10px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:40px;flex-wrap:wrap}
+.section-title{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0}
+.section-lead{font-size:14px;color:var(--faint);margin:0;max-width:32ch}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:border-color 150ms ease}
+.card:hover{border-color:var(--bv)}
+.card.featured{background:var(--sv)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.card-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+.card-arrow{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--violet);line-height:1}
+.card h3{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:18px;color:var(--fg);margin:14px 0 0}
+.card-desc{font-size:14px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+.card-metric{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:var(--accent);margin:14px 0 0}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);background:var(--chip);border:.5px solid var(--bv);padding:4px 8px;border-radius:6px}
+.card-links{display:flex;gap:18px;margin-top:20px;padding-top:16px;border-top:.5px solid var(--border)}
+.card-case-link{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--accent)}
+.card-case-link:hover{color:var(--accent-h)}
+.card-ext{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
+.card-ext:hover{color:var(--fg)}
+.case-card{background:var(--sv);border:.5px solid var(--bv);border-radius:12px;padding:clamp(24px,4vw,44px)}
+.case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px}
+.case-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0}
+.case-sub{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint)}
+.case-lead{font-size:clamp(16px,2vw,18px);line-height:1.6;color:var(--muted);max-width:60ch;margin:16px 0 0}
+.meta-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin:32px 0;padding:20px 0;border-top:.5px solid var(--border);border-bottom:.5px solid var(--border)}
+.meta-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--faint);margin-bottom:6px}
+.meta-val{font-size:14px;color:var(--fg)}
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 40px}
+.case-grid h3{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:17px;color:var(--fg);margin:0 0 8px}
+.case-grid p{font-size:15px;line-height:1.65;color:var(--muted);margin:0}
+.case-why{color:var(--accent)}
+.results{margin-top:36px}
+.results-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--violet);margin-bottom:16px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.result{background:var(--surface);border:.5px solid var(--border);border-radius:10px;padding:18px}
+.result-value{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;line-height:1;color:var(--fg)}
+.result-label{font-size:13px;line-height:1.5;color:var(--muted);margin-top:8px}
+.case-ctas{display:flex;flex-wrap:wrap;gap:18px;margin-top:32px}
+.case-demo{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--violet-fg);background:var(--violet);padding:10px 18px;border-radius:6px}
+.case-demo:hover{background:var(--violet-h);color:var(--violet-fg)}
+.case-src{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);align-self:center}
+.case-src:hover{color:var(--accent-h)}
+.testi-title{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 40px}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.testi{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:24px;margin:0;display:flex;flex-direction:column}
+.testi blockquote{font-size:16px;line-height:1.6;color:var(--fg);margin:0;flex:1}
+.testi figcaption{margin-top:20px;padding-top:16px;border-top:.5px solid var(--border)}
+.testi-name{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--fg)}
+.testi-role{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);margin-top:4px}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;align-items:start}
+.about-grid h2{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 20px}
+.about-p{font-size:17px;line-height:1.7;color:var(--muted);margin:0 0 16px;max-width:56ch}
+.about-p:last-child{margin-bottom:0}
+.stack-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--faint);margin-bottom:14px}
+.stack-chips{display:flex;flex-wrap:wrap;gap:8px}
+.contact{padding-bottom:clamp(56px,9vw,104px)}
+.contact h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:18ch}
+.contact-lead{font-size:clamp(16px,2.2vw,18px);line-height:1.6;color:var(--muted);max-width:48ch;margin:20px 0 0}
+.contact-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center}
+.contact-ext{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);padding:12px 4px}
+.contact-ext:hover{color:var(--accent-h)}
+.resume-link{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;color:var(--muted);padding:12px 4px}
+.resume-link:hover{color:var(--fg)}
+footer.site{border-top:.5px solid var(--border)}
+.footer-inner{max-width:1120px;margin:0 auto;padding:32px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--fg)}
+.footer-links{display:flex;gap:24px;align-items:center}
+.footer-link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint);background:transparent;border:none;cursor:pointer;padding:0}
+.footer-link:hover{color:var(--accent)}
+.modal-scrim{position:fixed;inset:0;z-index:80;background:var(--modal-scrim);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:clamp(16px,6vh,72px) 16px;overflow-y:auto}
+.modal-scrim.open{display:flex}
+.modal{width:100%;max-width:480px;background:var(--surface);border:.5px solid var(--bv);border-radius:14px;padding:clamp(24px,4vw,34px);box-shadow:0 24px 60px -12px rgba(0,0,0,.5)}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.modal-head h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0;color:var(--fg)}
+.modal-sub{font-size:14px;line-height:1.55;color:var(--muted);margin:8px 0 0}
+.modal-close{flex-shrink:0;background:transparent;border:.5px solid var(--border);border-radius:6px;width:34px;height:34px;color:var(--fg);font-family:'JetBrains Mono',monospace;font-size:18px;line-height:1;cursor:pointer}
+.contact-form{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--faint)}
+.field input,.field textarea{background:var(--bg);border:.5px solid var(--border);border-radius:8px;padding:11px 13px;font-size:15px;color:var(--fg);transition:border-color 150ms ease}
+.field textarea{line-height:1.55;resize:vertical;min-height:96px}
+.form-error{font-family:'JetBrains Mono',monospace;font-size:12px;color:#F87171;display:none}
+.form-error.show{display:block}
+.form-submit{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;color:var(--violet-fg);background:var(--violet);padding:13px;border-radius:8px;border:none;cursor:pointer;transition:background 150ms ease;margin-top:4px}
+.form-submit:hover{background:var(--violet-h)}
+.form-submit:disabled{opacity:.6;cursor:default}
+.form-success{margin-top:24px;text-align:center;padding:16px 0 8px;display:none}
+.form-success.show{display:block}
+.success-icon{width:52px;height:52px;border-radius:50%;background:var(--chip);border:.5px solid var(--bv);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--violet);font-size:24px}
+.form-success h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;margin:0;color:var(--fg)}
+.form-success p{font-size:15px;line-height:1.55;color:var(--muted);margin:8px 0 20px}
+.send-another{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--fg);background:transparent;border:.5px solid var(--border);padding:10px 20px;border-radius:8px;cursor:pointer}
+.send-another:hover{border-color:var(--bv)}
+.modal-foot{margin-top:22px;padding-top:18px;border-top:.5px solid var(--border);display:flex;align-items:center;justify-content:center;gap:18px}
+.modal-foot span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint)}
+.modal-foot a{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent)}
+.modal-foot a:hover{color:var(--accent-h)}
+body.locked{overflow:hidden}
+</style>
 </head>
 <body>
-    <main>
-        <section class="container-fluid">
-            <div class="container text-center">
-                <h1>Lucas Dantas</h1>
-                <h2>Web Developer</h2>
-                <div class="icons">
-                    <a href="https://twitter.com/lucantas" alt="twitter profile" target="_blank">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-twitter fa-stack-1x"></i>
-                        </span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/lucantas" alt="free-code-camp profile" target="_blank">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle-thin fa-3x fa-stack-2x"></i>
-                            <i class="fa fa-linkedin fa-stack-1x"></i>
-                        </span>
-                    </a>
-                    <a href="https://github.com/lucantas" alt="github page" target="_blank">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x"></i>
-                        </span>
-                    </a>
-                </div>
-                <div class="external-buttons col-md-6 col-md-offset-3 btn btn-primary">
-                    Clique aqui para conhecer projetos online
-                </div>
-            </div>
-            
-        </section>
-    </main>
-    
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="libs/animations.js"></script>
+
+<header class="site" id="siteHeader">
+  <nav>
+    <a href="#top" class="logo">Lucas Dantas<span class="dot">.</span></a>
+    <div class="nav-desktop">
+      <a href="#work" class="nav-link" data-i18n="navWork">work</a>
+      <a href="#case" class="nav-link" data-i18n="navCase">case study</a>
+      <a href="#about" class="nav-link" data-i18n="navAbout">about</a>
+      <button class="btn-primary" data-open-contact data-i18n="hireCta">Contact me</button>
+    </div>
+    <div class="nav-mobile">
+      <button class="hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-top">
+    <span class="logo">Lucas Dantas<span class="dot">.</span></span>
+    <div class="menu-top-right">
+      <button class="menu-close" id="menuClose" aria-label="Close">×</button>
+    </div>
+  </div>
+  <div class="menu-links">
+    <a href="#work" data-menu-link data-i18n="menuWork">Work</a>
+    <a href="#case" data-menu-link data-i18n="menuCase">Case study</a>
+    <a href="#about" data-menu-link data-i18n="menuAbout">About</a>
+  </div>
+  <button class="menu-cta" data-open-contact data-menu-link data-i18n="hireCta">Contact me</button>
+</div>
+
+<main id="top">
+  <section class="container hero">
+    <div class="badge"><span class="pulse"></span><span data-i18n="heroBadge">available for freelance work</span></div>
+    <h1 id="heroLines"><span>Fast apps.</span><span>Clean code.</span><span>Shipped.</span></h1>
+    <p class="hero-p"><span data-i18n="heroP1">I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack — </span><span class="hl">Go, Python and .NET</span><span data-i18n="heroP2"> on the backend, </span><span class="hl">React / Next.js</span><span data-i18n="heroP3"> on the front.</span></p>
+    <div class="hero-ctas">
+      <button class="btn-lg" data-open-contact data-i18n="ctaHire">Contact me</button>
+      <a href="#work" class="btn-ghost" data-i18n="ctaWork">View work</a>
+    </div>
+    <div class="chips" id="heroStack"></div>
+  </section>
+
+  <section id="work" class="container section">
+    <div class="section-head">
+      <div>
+        <div class="kicker" data-i18n="workKicker">01 — work</div>
+        <h2 class="section-title" data-i18n="workTitle">Selected work</h2>
+      </div>
+      <p class="section-lead" data-i18n="workLead">A few things I've shipped. Each one led with a measurable outcome.</p>
+    </div>
+    <div class="work-grid" id="workGrid"></div>
+  </section>
+
+  <section id="case" class="container section">
+    <div class="kicker" data-i18n="caseKicker">02 — case study</div>
+    <div class="case-card">
+      <div class="case-head">
+        <h2>Tempo</h2>
+        <span class="case-sub" data-i18n="caseSub">adaptive running plans · 2025</span>
+      </div>
+      <p class="case-lead" data-i18n="caseLead"></p>
+      <div class="meta-strip">
+        <div>
+          <div class="meta-label" data-i18n="labelRole">role</div>
+          <div class="meta-val" data-i18n="roleVal"></div>
+        </div>
+        <div>
+          <div class="meta-label" data-i18n="labelTimeline">timeline</div>
+          <div class="meta-val" data-i18n="timelineVal"></div>
+        </div>
+        <div>
+          <div class="meta-label" data-i18n="labelStack">stack</div>
+          <div class="meta-val">Next.js · Go · PostgreSQL · Redis</div>
+        </div>
+      </div>
+      <div class="case-grid">
+        <div>
+          <h3 data-i18n="problemH"></h3>
+          <p data-i18n="problemP"></p>
+        </div>
+        <div>
+          <h3 data-i18n="constraintsH"></h3>
+          <p data-i18n="constraintsP"></p>
+        </div>
+        <div>
+          <h3 data-i18n="approachH"></h3>
+          <p><span data-i18n="approachP1"></span><span class="case-why" data-i18n="approachWhy"></span><span data-i18n="approachP2"></span></p>
+        </div>
+        <div>
+          <h3 data-i18n="tradeoffsH"></h3>
+          <p data-i18n="tradeoffsP"></p>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-label" data-i18n="resultsLabel">results</div>
+        <div class="results-grid" id="resultsGrid"></div>
+      </div>
+      <div class="case-ctas">
+        <a href="https://tempo.run" target="_blank" rel="noopener" class="case-demo" data-i18n="liveDemo">Live demo ↗</a>
+        <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="case-src" data-i18n="source">source ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="kicker" data-i18n="testiKicker">03 — testimonials</div>
+    <h2 class="testi-title" data-i18n="testiTitle">What clients say</h2>
+    <div class="testi-grid" id="testiGrid"></div>
+  </section>
+
+  <section id="about" class="container section">
+    <div class="kicker" data-i18n="aboutKicker">04 — about</div>
+    <div class="about-grid">
+      <div>
+        <h2 data-i18n="aboutTitle">About</h2>
+        <p class="about-p"><span data-i18n="aboutP1a"></span><span class="hl">Go, Python and .NET</span><span data-i18n="aboutP1b"></span><span class="hl">React / Next.js</span><span data-i18n="aboutP1c"></span></p>
+        <p class="about-p" data-i18n="aboutP2"></p>
+      </div>
+      <div>
+        <div class="stack-label" data-i18n="labelStack">stack</div>
+        <div class="stack-chips" id="fullStackChips"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container section contact">
+    <div class="kicker" data-i18n="contactKicker">05 — contact</div>
+    <h2 data-i18n="contactTitle">Available for freelance work.</h2>
+    <p class="contact-lead" data-i18n="contactLead"></p>
+    <div class="contact-ctas">
+      <button class="btn-lg" data-open-contact data-i18n="contactBtn">Contact me</button>
+      <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="contact-ext">github ↗</a>
+      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener" class="contact-ext">linkedin ↗</a>
+      <a href="resume.pdf" download class="resume-link" data-i18n="resumeBtn">Resume →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="footer-inner">
+    <span class="footer-logo">Lucas Dantas<span class="dot">.</span></span>
+    <div class="footer-links">
+      <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="footer-link">github ↗</a>
+      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener" class="footer-link">linkedin ↗</a>
+      <button class="footer-link" data-open-contact data-i18n="footerContact">contact</button>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-scrim" id="modalScrim">
+  <div class="modal" id="modalCard">
+    <div class="modal-head">
+      <div>
+        <h3 data-i18n="formTitle">Get in touch</h3>
+        <p class="modal-sub" data-i18n="formSub">Tell me about your project. I usually reply within a day.</p>
+      </div>
+      <button class="modal-close" data-close-contact aria-label="Close">×</button>
+    </div>
+    <form class="contact-form" id="contactForm" novalidate>
+      <label class="field">
+        <span class="field-label" data-i18n="nameLabel">Name</span>
+        <input type="text" name="name" id="fName" data-i18n-ph="namePh" placeholder="Your name">
+      </label>
+      <label class="field">
+        <span class="field-label" data-i18n="emailLabel">Email</span>
+        <input type="email" name="email" id="fEmail" data-i18n-ph="emailPh" placeholder="you@company.com">
+      </label>
+      <label class="field">
+        <span class="field-label" data-i18n="msgLabel">Message</span>
+        <textarea rows="4" name="message" id="fMsg" data-i18n-ph="msgPh" placeholder="What are you trying to build?"></textarea>
+      </label>
+      <div class="form-error" id="formError"></div>
+      <button type="submit" class="form-submit" id="formSubmit" data-i18n="sendBtn">Send message</button>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">✓</div>
+      <h3 data-i18n="successTitle">Message sent</h3>
+      <p data-i18n="successMsg">Thanks — I'll get back to you soon.</p>
+      <button class="send-another" id="sendAnother" data-i18n="sendAnother">Send another</button>
+    </div>
+    <div class="modal-foot">
+      <span data-i18n="orReach">or reach me on</span>
+      <a href="https://github.com/Lucantas" target="_blank" rel="noopener">github ↗</a>
+      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener">linkedin ↗</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/lucas.lucantas38@gmail.com';
+
+  var DICT = {
+    en: {
+      navWork: 'work', navCase: 'case study', navAbout: 'about', hireCta: 'Contact me',
+      menuWork: 'Work', menuCase: 'Case study', menuAbout: 'About',
+      heroBadge: 'available for freelance work',
+      heroLines: ['Fast apps.', 'Clean code.', 'Shipped.'],
+      heroP1: "I build performant, maintainable web apps for businesses that can't afford slow, messy code. Full-stack — ",
+      heroP2: ' on the backend, ', heroP3: ' on the front.',
+      ctaHire: 'Contact me', ctaWork: 'View work',
+      workKicker: '01 — work', workTitle: 'Selected work',
+      workLead: "A few things I've shipped. Each one led with a measurable outcome.",
+      readCase: 'Read case study →',
+      caseKicker: '02 — case study', caseSub: 'adaptive running plans · 2025',
+      caseLead: 'A running app that builds a training plan around your real life — and rewrites it when you miss a run, feel flat, or race early. Not another rigid 16-week PDF.',
+      labelRole: 'role', labelTimeline: 'timeline', labelStack: 'stack',
+      roleVal: 'Solo full-stack — plan engine, API, app',
+      timelineVal: '10 weeks to launch, ongoing',
+      problemH: 'The problem',
+      problemP: 'Most plans are static. One missed week and the schedule is wrong for the rest of the block, so runners either quit or grind through injuries. Retention data from the beta showed people dropping off exactly when their plan stopped matching reality.',
+      constraintsH: 'Constraints',
+      constraintsP: "Solo build on a tight timeline. Plans had to recompute instantly on the phone after a run, work offline-first, and stay cheap to run — no per-user ML infra budget. It also had to feel trustworthy: runners won't follow a plan they don't understand.",
+      approachH: 'Approach',
+      approachP1: "I built the plan engine as a pure, deterministic Go service — same inputs, same plan — so it's testable and explainable. Next.js handles the app with optimistic updates; Redis caches the current block. Every adjustment shows ",
+      approachWhy: 'why', approachP2: ' it changed, in plain language.',
+      tradeoffsH: 'Tradeoffs',
+      tradeoffsP: 'I chose rules over ML — less "magic," but explainable, instant, and free to run at any scale. I deferred social features to ship the core loop first. The engine’s determinism cost some flexibility, but made a class of bugs impossible and the whole thing trivially testable.',
+      resultsLabel: 'results', liveDemo: 'Live demo ↗', source: 'source ↗',
+      testiKicker: '03 — testimonials', testiTitle: 'What clients say',
+      aboutKicker: '04 — about', aboutTitle: 'About',
+      aboutP1a: "I'm Lucas, a full-stack engineer focused on fast, maintainable web apps. I build across the stack — ",
+      aboutP1b: ' on the backend, ', aboutP1c: ' on the front — with a bias toward performance and clean code.',
+      aboutP2: 'I like ambiguous briefs and owning them end to end: figure out the real problem, make the honest tradeoffs, ship, and leave code the next person can actually maintain.',
+      contactKicker: '05 — contact', contactTitle: 'Available for freelance work.',
+      contactLead: "Got something slow, messy, or half-built? Tell me what you're trying to ship and I'll tell you how I'd approach it.",
+      contactBtn: 'Contact me', resumeBtn: 'Resume →', footerContact: 'contact',
+      formTitle: 'Get in touch', formSub: 'Tell me about your project. I usually reply within a day.',
+      nameLabel: 'Name', emailLabel: 'Email', msgLabel: 'Message',
+      namePh: 'Your name', emailPh: 'you@company.com', msgPh: 'What are you trying to build?',
+      sendBtn: 'Send message', sendingBtn: 'Sending…', successTitle: 'Message sent',
+      successMsg: "Thanks — I'll get back to you soon.", sendAnother: 'Send another',
+      orReach: 'or reach me on',
+      errName: 'Please enter your name.', errEmail: 'Please enter a valid email.', errMessage: 'Please add a short message.',
+      errSend: 'Could not send right now. Please try again or reach me on LinkedIn.',
+      projects: [
+        { meta: '2025 · running app', title: 'Tempo', desc: 'Adaptive training plans for runners. Built the deterministic plan engine and the full Next.js app end to end.', metric: '12,000 runners · +34% plan completion', tags: ['Next.js', 'Go', 'PostgreSQL', 'Redis'], featured: true, isCase: true, live: 'https://tempo.run', repo: 'https://github.com/Lucantas' },
+        { meta: '2024 · saas', title: 'Meridian', desc: 'Analytics dashboard for a logistics SaaS. Rebuilt reporting on a materialized aggregation pipeline.', metric: 'Report generation 41s → 1.8s', tags: ['.NET', 'React', 'SQL Server'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
+        { meta: '2024 · fintech', title: 'Relay', desc: 'Event ingestion service for a payments platform. Rewrote the queue consumer and backpressure handling.', metric: '5M events/day · p99 latency −72%', tags: ['Python', 'FastAPI', 'Kafka', 'Docker'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
+        { meta: '2023 · internal tool', title: 'Forge', desc: 'Internal component library and scaffolding CLI for a 6-person product team.', metric: 'New-page build time: days → hours', tags: ['TypeScript', 'React', 'Vite'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' }
+      ],
+      caseResults: [
+        { value: '+34%', label: 'plan completion vs. static plans' },
+        { value: '12k', label: 'active runners at 6 months' },
+        { value: '<50ms', label: 'plan recompute, server-side' },
+        { value: '4.8★', label: 'average store rating' }
+      ],
+      testimonials: [
+        { quote: 'Lucas took an ambiguous brief and shipped in six weeks. The app is fast and the code is clean enough that our juniors can actually maintain it.', name: 'Marina Alves', role: 'CTO, Rota Logística' },
+        { quote: 'Rare to find someone who cares about both performance and readability. Our load times dropped and onboarding new engineers got easier.', name: 'David Chen', role: 'Founder, Northpeak' },
+        { quote: 'He communicates like a senior. Clear tradeoffs, honest timelines, no surprises. We rehired him for the next two projects.', name: 'Sofia Reis', role: 'Product Lead, Fielded' }
+      ]
+    },
+    pt: {
+      navWork: 'trabalhos', navCase: 'estudo de caso', navAbout: 'sobre', hireCta: 'Fale comigo',
+      menuWork: 'Trabalhos', menuCase: 'Estudo de caso', menuAbout: 'Sobre',
+      heroBadge: 'disponível para freelance',
+      heroLines: ['Apps rápidos.', 'Código limpo.', 'Entregue.'],
+      heroP1: 'Eu construo apps web performáticos e sustentáveis para negócios que não podem pagar por código lento e bagunçado. Full-stack — ',
+      heroP2: ' no backend, ', heroP3: ' no front.',
+      ctaHire: 'Fale comigo', ctaWork: 'Ver trabalhos',
+      workKicker: '01 — trabalhos', workTitle: 'Trabalhos selecionados',
+      workLead: 'Algumas coisas que entreguei. Cada uma com um resultado mensurável.',
+      readCase: 'Ver estudo de caso →',
+      caseKicker: '02 — estudo de caso', caseSub: 'planos de corrida adaptativos · 2025',
+      caseLead: 'Um app de corrida que monta um plano de treino em torno da sua vida real — e o reescreve quando você perde um treino, está sem energia ou antecipa uma prova. Não mais um PDF rígido de 16 semanas.',
+      labelRole: 'função', labelTimeline: 'prazo', labelStack: 'stack',
+      roleVal: 'Full-stack solo — motor de planos, API, app',
+      timelineVal: '10 semanas até o lançamento, em curso',
+      problemH: 'O problema',
+      problemP: 'A maioria dos planos é estática. Uma semana perdida e o cronograma fica errado pelo resto do ciclo, então os corredores desistem ou insistem até se machucar. Os dados de retenção do beta mostraram abandono exatamente quando o plano deixava de refletir a realidade.',
+      constraintsH: 'Restrições',
+      constraintsP: 'Construção solo com prazo apertado. Os planos precisavam recalcular instantaneamente no celular após cada treino, funcionar offline-first e ser baratos de rodar — sem orçamento de infra de ML por usuário. Também precisava inspirar confiança: corredores não seguem um plano que não entendem.',
+      approachH: 'Abordagem',
+      approachP1: 'Construí o motor de planos como um serviço Go puro e determinístico — mesmas entradas, mesmo plano — testável e explicável. O Next.js cuida do app com atualizações otimistas; o Redis faz cache do ciclo atual. Cada ajuste mostra ',
+      approachWhy: 'por quê', approachP2: ' mudou, em linguagem simples.',
+      tradeoffsH: 'Trade-offs',
+      tradeoffsP: 'Escolhi regras em vez de ML — menos "mágica", porém explicável, instantâneo e grátis de rodar em qualquer escala. Adiei recursos sociais para entregar o loop principal primeiro. O determinismo do motor custou alguma flexibilidade, mas tornou uma classe de bugs impossível e o sistema todo trivialmente testável.',
+      resultsLabel: 'resultados', liveDemo: 'Demo ao vivo ↗', source: 'código ↗',
+      testiKicker: '03 — depoimentos', testiTitle: 'O que os clientes dizem',
+      aboutKicker: '04 — sobre', aboutTitle: 'Sobre',
+      aboutP1a: 'Sou o Lucas, engenheiro full-stack focado em apps web rápidos e sustentáveis. Trabalho em toda a stack — ',
+      aboutP1b: ' no backend, ', aboutP1c: ' no front — com foco em performance e código limpo.',
+      aboutP2: 'Gosto de briefs ambíguos e de assumi-los de ponta a ponta: descobrir o problema real, fazer trade-offs honestos, entregar e deixar um código que a próxima pessoa consiga manter.',
+      contactKicker: '05 — contato', contactTitle: 'Disponível para freelance.',
+      contactLead: 'Tem algo lento, bagunçado ou pela metade? Me conte o que você quer entregar e eu digo como eu abordaria.',
+      contactBtn: 'Fale comigo', resumeBtn: 'Currículo →', footerContact: 'contato',
+      formTitle: 'Entre em contato', formSub: 'Conte sobre seu projeto. Costumo responder em até um dia.',
+      nameLabel: 'Nome', emailLabel: 'E-mail', msgLabel: 'Mensagem',
+      namePh: 'Seu nome', emailPh: 'voce@empresa.com', msgPh: 'O que você quer construir?',
+      sendBtn: 'Enviar mensagem', sendingBtn: 'Enviando…', successTitle: 'Mensagem enviada',
+      successMsg: 'Obrigado — retorno em breve.', sendAnother: 'Enviar outra',
+      orReach: 'ou me encontre em',
+      errName: 'Digite seu nome.', errEmail: 'Digite um e-mail válido.', errMessage: 'Escreva uma breve mensagem.',
+      errSend: 'Não foi possível enviar agora. Tente de novo ou me chame no LinkedIn.',
+      projects: [
+        { meta: '2025 · app de corrida', title: 'Tempo', desc: 'Planos de treino adaptativos para corredores. Construí o motor de planos determinístico e todo o app Next.js de ponta a ponta.', metric: '12.000 corredores · +34% de conclusão', tags: ['Next.js', 'Go', 'PostgreSQL', 'Redis'], featured: true, isCase: true, live: 'https://tempo.run', repo: 'https://github.com/Lucantas' },
+        { meta: '2024 · saas', title: 'Meridian', desc: 'Dashboard de analytics para um SaaS de logística. Reconstruí os relatórios sobre um pipeline de agregação materializada.', metric: 'Geração de relatório 41s → 1,8s', tags: ['.NET', 'React', 'SQL Server'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
+        { meta: '2024 · fintech', title: 'Relay', desc: 'Serviço de ingestão de eventos para uma plataforma de pagamentos. Reescrevi o consumidor de fila e o controle de backpressure.', metric: '5M eventos/dia · latência p99 −72%', tags: ['Python', 'FastAPI', 'Kafka', 'Docker'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
+        { meta: '2023 · ferramenta interna', title: 'Forge', desc: 'Biblioteca de componentes interna e CLI de scaffolding para um time de produto de 6 pessoas.', metric: 'Nova página: de dias para horas', tags: ['TypeScript', 'React', 'Vite'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' }
+      ],
+      caseResults: [
+        { value: '+34%', label: 'conclusão de plano vs. planos estáticos' },
+        { value: '12k', label: 'corredores ativos em 6 meses' },
+        { value: '<50ms', label: 'recálculo do plano, no servidor' },
+        { value: '4.8★', label: 'nota média na loja' }
+      ],
+      testimonials: [
+        { quote: 'Lucas pegou um brief ambíguo e entregou em seis semanas. O app é rápido e o código é limpo o bastante para nossos juniores manterem.', name: 'Marina Alves', role: 'CTO, Rota Logística' },
+        { quote: 'Raro encontrar alguém que se importa com performance e legibilidade. Nossos tempos de carga caíram e integrar novos engenheiros ficou mais fácil.', name: 'David Chen', role: 'Fundador, Northpeak' },
+        { quote: 'Ele se comunica como um sênior. Trade-offs claros, prazos honestos, sem surpresas. Recontratamos para os dois projetos seguintes.', name: 'Sofia Reis', role: 'Líder de Produto, Fielded' }
+      ]
+    }
+  };
+
+  var STACK = ['Go', 'Python', '.NET', 'React', 'Next.js', 'PostgreSQL'];
+  var FULL_STACK = ['Go', 'Python', '.NET / C#', 'TypeScript', 'React', 'Next.js', 'Node', 'PostgreSQL', 'Redis', 'Docker', 'AWS', 'gRPC'];
+
+  var state = { theme: 'light', lang: 'en' };
+
+  function t() { return DICT[state.lang]; }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderChips(target, items) {
+    target.textContent = '';
+    items.forEach(function (tech) { target.appendChild(el('span', 'chip', tech)); });
+  }
+
+  function renderProjects() {
+    var grid = document.getElementById('workGrid');
+    grid.textContent = '';
+    t().projects.forEach(function (p) {
+      var card = el('article', 'card' + (p.featured ? ' featured' : ''));
+      var top = el('div', 'card-top');
+      top.appendChild(el('span', 'card-meta', p.meta));
+      top.appendChild(el('span', 'card-arrow', '↗'));
+      card.appendChild(top);
+      card.appendChild(el('h3', null, p.title));
+      card.appendChild(el('p', 'card-desc', p.desc));
+      card.appendChild(el('p', 'card-metric', p.metric));
+      var tags = el('div', 'card-tags');
+      p.tags.forEach(function (tg) { tags.appendChild(el('span', 'tag', tg)); });
+      card.appendChild(tags);
+      var links = el('div', 'card-links');
+      if (p.isCase) {
+        var caseLink = el('a', 'card-case-link', t().readCase);
+        caseLink.href = '#case';
+        links.appendChild(caseLink);
+      }
+      var live = el('a', 'card-ext', 'live ↗');
+      live.href = p.live; live.target = '_blank'; live.rel = 'noopener';
+      var repo = el('a', 'card-ext', 'repo ↗');
+      repo.href = p.repo; repo.target = '_blank'; repo.rel = 'noopener';
+      links.appendChild(live);
+      links.appendChild(repo);
+      card.appendChild(links);
+      grid.appendChild(card);
+    });
+  }
+
+  function renderResults() {
+    var grid = document.getElementById('resultsGrid');
+    grid.textContent = '';
+    t().caseResults.forEach(function (r) {
+      var box = el('div', 'result');
+      box.appendChild(el('div', 'result-value', r.value));
+      box.appendChild(el('div', 'result-label', r.label));
+      grid.appendChild(box);
+    });
+  }
+
+  function renderTestimonials() {
+    var grid = document.getElementById('testiGrid');
+    grid.textContent = '';
+    t().testimonials.forEach(function (ts) {
+      var fig = el('figure', 'testi');
+      fig.appendChild(el('blockquote', null, '“' + ts.quote + '”'));
+      var cap = el('figcaption');
+      cap.appendChild(el('div', 'testi-name', ts.name));
+      cap.appendChild(el('div', 'testi-role', ts.role));
+      fig.appendChild(cap);
+      grid.appendChild(fig);
+    });
+  }
+
+  function applyLang() {
+    var dict = t();
+    document.documentElement.lang = state.lang === 'pt' ? 'pt-BR' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(function (node) {
+      var val = dict[node.getAttribute('data-i18n')];
+      if (typeof val === 'string') node.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (node) {
+      var val = dict[node.getAttribute('data-i18n-ph')];
+      if (typeof val === 'string') node.placeholder = val;
+    });
+    var hero = document.getElementById('heroLines');
+    hero.textContent = '';
+    dict.heroLines.forEach(function (line) { hero.appendChild(el('span', null, line)); });
+    renderProjects();
+    renderResults();
+    renderTestimonials();
+  }
+
+  var header = document.getElementById('siteHeader');
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var menuOverlay = document.getElementById('menuOverlay');
+  function setMenu(open) {
+    menuOverlay.classList.toggle('open', open);
+    document.body.classList.toggle('locked', open);
+  }
+  document.getElementById('menuBtn').addEventListener('click', function () { setMenu(true); });
+  document.getElementById('menuClose').addEventListener('click', function () { setMenu(false); });
+  document.querySelectorAll('[data-menu-link]').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 720) setMenu(false);
+  });
+
+  var scrim = document.getElementById('modalScrim');
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  var errorBox = document.getElementById('formError');
+  var submitBtn = document.getElementById('formSubmit');
+
+  function showForm() {
+    form.style.display = 'flex';
+    success.classList.remove('show');
+    errorBox.classList.remove('show');
+  }
+
+  function openContact() {
+    showForm();
+    scrim.classList.add('open');
+    document.body.classList.add('locked');
+    document.getElementById('fName').focus();
+  }
+
+  function closeContact() {
+    scrim.classList.remove('open');
+    document.body.classList.remove('locked');
+  }
+
+  document.querySelectorAll('[data-open-contact]').forEach(function (b) {
+    b.addEventListener('click', openContact);
+  });
+  document.querySelectorAll('[data-close-contact]').forEach(function (b) {
+    b.addEventListener('click', closeContact);
+  });
+  scrim.addEventListener('click', function (e) { if (e.target === scrim) closeContact(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && scrim.classList.contains('open')) closeContact();
+  });
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.classList.add('show');
+  }
+
+  ['fName', 'fEmail', 'fMsg'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      errorBox.classList.remove('show');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var dict = t();
+    var name = document.getElementById('fName').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    var message = document.getElementById('fMsg').value.trim();
+    if (!name) { showError(dict.errName); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(dict.errEmail); return; }
+    if (!message) { showError(dict.errMessage); return; }
+    submitBtn.disabled = true;
+    submitBtn.textContent = dict.sendingBtn;
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, message: message, _subject: 'Portfolio contact from ' + name })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      return res.json();
+    }).then(function (data) {
+      if (data.success !== 'true' && data.success !== true) throw new Error('send rejected');
+      form.reset();
+      form.style.display = 'none';
+      success.classList.add('show');
+    }).catch(function () {
+      showError(t().errSend);
+    }).finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = t().sendBtn;
+    });
+  });
+
+  document.getElementById('sendAnother').addEventListener('click', showForm);
+
+  renderChips(document.getElementById('heroStack'), STACK);
+  renderChips(document.getElementById('fullStackChips'), FULL_STACK);
+  applyLang();
+})();
+</script>
 </body>
 </html>
