@@ -91,6 +91,7 @@ header.site nav{max-width:1120px;margin:0 auto;padding:16px clamp(20px,5vw,48px)
 .card-case-link{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--accent)}
 .card-case-link:hover{color:var(--accent-h)}
 .card-ext{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
+button.card-ext{background:none;border:0;padding:0;cursor:pointer;text-align:left}
 .card-ext:hover{color:var(--fg)}
 .case-card{background:var(--sv);border:.5px solid var(--bv);border-radius:12px;padding:clamp(24px,4vw,44px)}
 .case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 20px}
@@ -111,7 +112,7 @@ header.site nav{max-width:1120px;margin:0 auto;padding:16px clamp(20px,5vw,48px)
 .result-value{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;line-height:1;color:var(--fg)}
 .result-label{font-size:13px;line-height:1.5;color:var(--muted);margin-top:8px}
 .case-ctas{display:flex;flex-wrap:wrap;gap:18px;margin-top:32px}
-.case-demo{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--violet-fg);background:var(--violet);padding:10px 18px;border-radius:6px}
+.case-demo{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:14px;color:var(--violet-fg);background:var(--violet);padding:10px 18px;border-radius:6px;border:0;cursor:pointer}
 .case-demo:hover{background:var(--violet-h);color:var(--violet-fg)}
 .case-src{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);align-self:center}
 .case-src:hover{color:var(--accent-h)}
@@ -235,7 +236,7 @@ body.locked{overflow:hidden}
     <div class="case-card">
       <div class="case-head">
         <h2>Tempo</h2>
-        <span class="case-sub" data-i18n="caseSub">adaptive running plans · 2025</span>
+        <span class="case-sub" data-i18n="caseSub">adaptive running plans · 2026</span>
       </div>
       <p class="case-lead" data-i18n="caseLead"></p>
       <div class="meta-strip">
@@ -275,20 +276,20 @@ body.locked{overflow:hidden}
         <div class="results-grid" id="resultsGrid"></div>
       </div>
       <div class="case-ctas">
-        <a href="https://tempo.run" target="_blank" rel="noopener" class="case-demo" data-i18n="liveDemo">Live demo ↗</a>
+        <button type="button" class="case-demo" data-open-contact data-i18n="liveDemo">Ask for live/demo</button>
         <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="case-src" data-i18n="source">source ↗</a>
       </div>
     </div>
   </section>
 
-  <section class="container section">
+  <section class="container section" hidden>
     <div class="kicker" data-i18n="testiKicker">03 — testimonials</div>
     <h2 class="testi-title" data-i18n="testiTitle">What clients say</h2>
     <div class="testi-grid" id="testiGrid"></div>
   </section>
 
   <section id="about" class="container section">
-    <div class="kicker" data-i18n="aboutKicker">04 — about</div>
+    <div class="kicker" data-i18n="aboutKicker">03 — about</div>
     <div class="about-grid">
       <div>
         <h2 data-i18n="aboutTitle">About</h2>
@@ -303,7 +304,7 @@ body.locked{overflow:hidden}
   </section>
 
   <section id="contact" class="container section contact">
-    <div class="kicker" data-i18n="contactKicker">05 — contact</div>
+    <div class="kicker" data-i18n="contactKicker">04 — contact</div>
     <h2 data-i18n="contactTitle">Available for freelance work.</h2>
     <p class="contact-lead" data-i18n="contactLead"></p>
     <div class="contact-ctas">
@@ -381,7 +382,7 @@ body.locked{overflow:hidden}
       workKicker: '01 — work', workTitle: 'Selected work',
       workLead: "A few things I've shipped. Each one led with a measurable outcome.",
       readCase: 'Read case study →',
-      caseKicker: '02 — case study', caseSub: 'adaptive running plans · 2025',
+      caseKicker: '02 — case study', caseSub: 'adaptive running plans · 2026',
       caseLead: 'A running app that builds a training plan around your real life — and rewrites it when you miss a run, feel flat, or race early. Not another rigid 16-week PDF.',
       labelRole: 'role', labelTimeline: 'timeline', labelStack: 'stack',
       roleVal: 'Solo full-stack — plan engine, API, app',
@@ -395,13 +396,13 @@ body.locked{overflow:hidden}
       approachWhy: 'why', approachP2: ' it changed, in plain language.',
       tradeoffsH: 'Tradeoffs',
       tradeoffsP: 'I chose rules over ML — less "magic," but explainable, instant, and free to run at any scale. I deferred social features to ship the core loop first. The engine’s determinism cost some flexibility, but made a class of bugs impossible and the whole thing trivially testable.',
-      resultsLabel: 'results', liveDemo: 'Live demo ↗', source: 'source ↗',
+      resultsLabel: 'results', liveDemo: 'Ask for live/demo', askDemo: 'ask for live/demo', source: 'source ↗',
       testiKicker: '03 — testimonials', testiTitle: 'What clients say',
-      aboutKicker: '04 — about', aboutTitle: 'About',
+      aboutKicker: '03 — about', aboutTitle: 'About',
       aboutP1a: "I'm Lucas, a full-stack engineer focused on fast, maintainable web apps. I build across the stack — ",
       aboutP1b: ' on the backend, ', aboutP1c: ' on the front — with a bias toward performance and clean code.',
       aboutP2: 'I like ambiguous briefs and owning them end to end: figure out the real problem, make the honest tradeoffs, ship, and leave code the next person can actually maintain.',
-      contactKicker: '05 — contact', contactTitle: 'Available for freelance work.',
+      contactKicker: '04 — contact', contactTitle: 'Available for freelance work.',
       contactLead: "Got something slow, messy, or half-built? Tell me what you're trying to ship and I'll tell you how I'd approach it.",
       contactBtn: 'Contact me', resumeBtn: 'Resume →', footerContact: 'contact',
       formTitle: 'Get in touch', formSub: 'Tell me about your project. I usually reply within a day.',
@@ -413,14 +414,13 @@ body.locked{overflow:hidden}
       errName: 'Please enter your name.', errEmail: 'Please enter a valid email.', errMessage: 'Please add a short message.',
       errSend: 'Could not send right now. Please try again or reach me on LinkedIn.',
       projects: [
-        { meta: '2025 · running app', title: 'Tempo', desc: 'Adaptive training plans for runners. Built the deterministic plan engine and the full Next.js app end to end.', metric: '12,000 runners · +34% plan completion', tags: ['Next.js', 'Go', 'PostgreSQL', 'Redis'], featured: true, isCase: true, live: 'https://tempo.run', repo: 'https://github.com/Lucantas' },
-        { meta: '2024 · saas', title: 'Meridian', desc: 'Analytics dashboard for a logistics SaaS. Rebuilt reporting on a materialized aggregation pipeline.', metric: 'Report generation 41s → 1.8s', tags: ['.NET', 'React', 'SQL Server'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
-        { meta: '2024 · fintech', title: 'Relay', desc: 'Event ingestion service for a payments platform. Rewrote the queue consumer and backpressure handling.', metric: '5M events/day · p99 latency −72%', tags: ['Python', 'FastAPI', 'Kafka', 'Docker'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
-        { meta: '2023 · internal tool', title: 'Forge', desc: 'Internal component library and scaffolding CLI for a 6-person product team.', metric: 'New-page build time: days → hours', tags: ['TypeScript', 'React', 'Vite'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' }
+        { meta: '2026 · running plans app', title: 'Tempo', desc: 'Adaptive training plans for runners. Built the deterministic plan engine and the full Next.js app end to end.', metric: '500+ runners · 78% plan completion', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true, repo: 'https://github.com/Lucantas' },
+        { meta: '2026 · saas', title: 'Meridian', desc: 'Analytics dashboard for a logistics SaaS. Rebuilt reporting on a materialized aggregation pipeline.', metric: 'Report generation 41s → 1.8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' },
+        { meta: '2026 · proptech', title: 'Morada', desc: 'Condominium management app for admins and residents. Built feature-first with lint-enforced architecture boundaries and TDD end to end.', metric: '2 roles, 1 codebase · 80%+ coverage gate', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' }
       ],
       caseResults: [
-        { value: '+34%', label: 'plan completion vs. static plans' },
-        { value: '12k', label: 'active runners at 6 months' },
+        { value: '78%', label: 'plan completion' },
+        { value: '500+', label: 'active runners' },
         { value: '<50ms', label: 'plan recompute, server-side' },
         { value: '4.8★', label: 'average store rating' }
       ],
@@ -441,7 +441,7 @@ body.locked{overflow:hidden}
       workKicker: '01 — trabalhos', workTitle: 'Trabalhos selecionados',
       workLead: 'Algumas coisas que entreguei. Cada uma com um resultado mensurável.',
       readCase: 'Ver estudo de caso →',
-      caseKicker: '02 — estudo de caso', caseSub: 'planos de corrida adaptativos · 2025',
+      caseKicker: '02 — estudo de caso', caseSub: 'planos de corrida adaptativos · 2026',
       caseLead: 'Um app de corrida que monta um plano de treino em torno da sua vida real — e o reescreve quando você perde um treino, está sem energia ou antecipa uma prova. Não mais um PDF rígido de 16 semanas.',
       labelRole: 'função', labelTimeline: 'prazo', labelStack: 'stack',
       roleVal: 'Full-stack solo — motor de planos, API, app',
@@ -455,13 +455,13 @@ body.locked{overflow:hidden}
       approachWhy: 'por quê', approachP2: ' mudou, em linguagem simples.',
       tradeoffsH: 'Trade-offs',
       tradeoffsP: 'Escolhi regras em vez de ML — menos "mágica", porém explicável, instantâneo e grátis de rodar em qualquer escala. Adiei recursos sociais para entregar o loop principal primeiro. O determinismo do motor custou alguma flexibilidade, mas tornou uma classe de bugs impossível e o sistema todo trivialmente testável.',
-      resultsLabel: 'resultados', liveDemo: 'Demo ao vivo ↗', source: 'código ↗',
+      resultsLabel: 'resultados', liveDemo: 'Pedir demo ao vivo', askDemo: 'pedir demo ao vivo', source: 'código ↗',
       testiKicker: '03 — depoimentos', testiTitle: 'O que os clientes dizem',
-      aboutKicker: '04 — sobre', aboutTitle: 'Sobre',
+      aboutKicker: '03 — sobre', aboutTitle: 'Sobre',
       aboutP1a: 'Sou o Lucas, engenheiro full-stack focado em apps web rápidos e sustentáveis. Trabalho em toda a stack — ',
       aboutP1b: ' no backend, ', aboutP1c: ' no front — com foco em performance e código limpo.',
       aboutP2: 'Gosto de briefs ambíguos e de assumi-los de ponta a ponta: descobrir o problema real, fazer trade-offs honestos, entregar e deixar um código que a próxima pessoa consiga manter.',
-      contactKicker: '05 — contato', contactTitle: 'Disponível para freelance.',
+      contactKicker: '04 — contato', contactTitle: 'Disponível para freelance.',
       contactLead: 'Tem algo lento, bagunçado ou pela metade? Me conte o que você quer entregar e eu digo como eu abordaria.',
       contactBtn: 'Fale comigo', resumeBtn: 'Currículo →', footerContact: 'contato',
       formTitle: 'Entre em contato', formSub: 'Conte sobre seu projeto. Costumo responder em até um dia.',
@@ -473,14 +473,13 @@ body.locked{overflow:hidden}
       errName: 'Digite seu nome.', errEmail: 'Digite um e-mail válido.', errMessage: 'Escreva uma breve mensagem.',
       errSend: 'Não foi possível enviar agora. Tente de novo ou me chame no LinkedIn.',
       projects: [
-        { meta: '2025 · app de corrida', title: 'Tempo', desc: 'Planos de treino adaptativos para corredores. Construí o motor de planos determinístico e todo o app Next.js de ponta a ponta.', metric: '12.000 corredores · +34% de conclusão', tags: ['Next.js', 'Go', 'PostgreSQL', 'Redis'], featured: true, isCase: true, live: 'https://tempo.run', repo: 'https://github.com/Lucantas' },
-        { meta: '2024 · saas', title: 'Meridian', desc: 'Dashboard de analytics para um SaaS de logística. Reconstruí os relatórios sobre um pipeline de agregação materializada.', metric: 'Geração de relatório 41s → 1,8s', tags: ['.NET', 'React', 'SQL Server'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
-        { meta: '2024 · fintech', title: 'Relay', desc: 'Serviço de ingestão de eventos para uma plataforma de pagamentos. Reescrevi o consumidor de fila e o controle de backpressure.', metric: '5M eventos/dia · latência p99 −72%', tags: ['Python', 'FastAPI', 'Kafka', 'Docker'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' },
-        { meta: '2023 · ferramenta interna', title: 'Forge', desc: 'Biblioteca de componentes interna e CLI de scaffolding para um time de produto de 6 pessoas.', metric: 'Nova página: de dias para horas', tags: ['TypeScript', 'React', 'Vite'], featured: false, isCase: false, live: 'https://example.com', repo: 'https://github.com/Lucantas' }
+        { meta: '2026 · app de planos de corrida', title: 'Tempo', desc: 'Planos de treino adaptativos para corredores. Construí o motor de planos determinístico e todo o app Next.js de ponta a ponta.', metric: '500+ corredores · 78% de conclusão de plano', tags: ['Go', 'Next.js', 'PostgreSQL', 'Redis'], featured: true, isCase: true, repo: 'https://github.com/Lucantas' },
+        { meta: '2026 · saas', title: 'Meridian', desc: 'Dashboard de analytics para um SaaS de logística. Reconstruí os relatórios sobre um pipeline de agregação materializada.', metric: 'Geração de relatório 41s → 1,8s', tags: ['Go', 'React', 'MySQL'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' },
+        { meta: '2026 · proptech', title: 'Morada', desc: 'App de gestão de condomínios para síndicos e moradores. Construído feature-first com limites de arquitetura garantidos por lint e TDD de ponta a ponta.', metric: '2 perfis, 1 codebase · cobertura mínima de 80%', tags: ['TypeScript', 'React', 'TanStack Query', 'Zod'], featured: false, isCase: false, repo: 'https://github.com/Lucantas' }
       ],
       caseResults: [
-        { value: '+34%', label: 'conclusão de plano vs. planos estáticos' },
-        { value: '12k', label: 'corredores ativos em 6 meses' },
+        { value: '78%', label: 'conclusão de plano' },
+        { value: '500+', label: 'corredores ativos' },
         { value: '<50ms', label: 'recálculo do plano, no servidor' },
         { value: '4.8★', label: 'nota média na loja' }
       ],
@@ -532,11 +531,12 @@ body.locked{overflow:hidden}
         caseLink.href = '#case';
         links.appendChild(caseLink);
       }
-      var live = el('a', 'card-ext', 'live ↗');
-      live.href = p.live; live.target = '_blank'; live.rel = 'noopener';
+      var askDemo = el('button', 'card-ext', t().askDemo);
+      askDemo.type = 'button';
+      askDemo.addEventListener('click', openContact);
       var repo = el('a', 'card-ext', 'repo ↗');
       repo.href = p.repo; repo.target = '_blank'; repo.rel = 'noopener';
-      links.appendChild(live);
+      links.appendChild(askDemo);
       links.appendChild(repo);
       card.appendChild(links);
       grid.appendChild(card);
