@@ -327,7 +327,11 @@
   }
 
   function jobCard(job, opts) {
-    var card = el('article', 'post' + (opts.featured ? ' featured' : ''));
+    var card = el('article', 'post clickable' + (opts.featured ? ' featured' : ''));
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return; /* the "open project" link handles itself */
+      navigate(job.href, null, true);
+    });
     var cover = el('div', 'post-cover');
     cover.appendChild(imageSlot(job.images[0], job.ph[0]));
     var body = el('div', 'post-body');

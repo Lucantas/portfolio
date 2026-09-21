@@ -74,6 +74,8 @@ input::placeholder,textarea::placeholder{color:#9A958C}
 .feed-head h2{font-family:var(--pixel);font-size:clamp(12px,2.4vw,16px);line-height:1.4;text-transform:uppercase;margin:0}
 .feed-all{font-weight:700;font-size:14px;color:var(--coral)}
 .post{background:var(--branco);border:3px solid var(--carvao);box-shadow:6px 6px 0 var(--carvao);display:flex;flex-direction:column}
+.post.clickable{cursor:pointer}
+.post.clickable:hover .post-open{color:var(--carvao)}
 .post.featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));margin-bottom:28px}
 .post-col{display:flex;flex-direction:column}
 .post-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:3px solid var(--carvao)}
