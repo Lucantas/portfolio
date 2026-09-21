@@ -19,14 +19,14 @@
       avatarPh: 'photo',
       heroKicker: 'full-stack · Go · Python · .NET · React',
       heroTitle: 'I build things for the web. And I have fun doing it.',
-      heroSub: 'Hi, I\'m Lucas. I like taking a messy problem, turning it into working software and shipping it. Backend, frontend, whatever the thing needs.',
+      heroSub: 'I like taking a messy problem and turning it into software people actually use. Backend, frontend, whatever the thing needs.',
       ctaWork: 'See my work', ctaHire: 'Say hi',
       workLabel: 'Latest work', seeAllShort: 'all →', seeAll: 'See all work', openJob: 'Open project →',
       worksTitle: 'All work', worksLead: 'Everything I\'ve built and can show. Newest first.',
       backHome: '← home', liveLink: 'Open live', repoLink: 'Source on GitHub ↗', imageLabel: 'Image',
-      aboutLabel: 'About', aboutTitle: 'I play with code for a living.',
+      aboutLabel: 'About', aboutTitle: 'Hi, I\'m Lucas. I play with code for a living.',
       aboutP1: 'Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.',
-      aboutP2: 'I like ambiguous briefs and owning them end to end. On Longa that meant picking a deterministic rules engine over ML: less magic, but every plan change can explain itself, and it runs for free at any scale.',
+      aboutP2: 'I like ambiguous briefs and owning them end to end. On Longa, for example, I picked a rules engine over ML: less magic, but every plan change can explain itself, and it runs for free at any scale.',
       gopherCaption: 'player 1 · lucas',
       heroAlt: 'Pixel-art Lucas wearing TypeScript armor and React pants, holding a Go sword and a MySQL shield',
       invTitle: 'Inventory',
@@ -47,10 +47,10 @@
       privP3: 'The contact form sends your name, email and message to my inbox. I use them only to reply, and I delete them on request.',
       footerNote: '© 2026 Lucas Dantas',
       jobs: {
-        longa: { title: 'Longa', subtitle: 'Adaptive training plans for runners', desc: 'A running app that rebuilds your week when life gets in the way.', body1: 'Most training plans are static: miss one week and the schedule is wrong for the rest of the block. Longa builds the plan around your real life and rewrites it when you miss a run or move a race.', body2: 'I built it solo, end to end: the plan engine in Go and the Next.js app on top. Every adjustment explains itself in plain language so runners trust what they see.', ph: ['week view', 'plan rewrite', 'race day screen'] },
-        morada: { title: 'Morada', subtitle: 'Condominium management for admins and residents', desc: 'A proptech app that puts building admins and residents on the same page.', body1: 'Two roles, one codebase: admins and residents share the app but see different screens. Built feature-first, with architecture boundaries enforced by lint and an 80% coverage gate.', body2: 'Each feature owns its screens, rules and data access; the linter blocks imports that cross those lines, so the codebase stays readable as it grows.', ph: ['resident home', 'admin panel', 'notices and bookings'] },
-        relay: { title: 'Relay', subtitle: 'Event ingestion for a payments platform', desc: 'The pipe that keeps millions of payment events flowing without piling up.', body1: 'Relay receives events from a payments platform and hands them to downstream services. Under load the old consumer fell behind and queues grew.', body2: 'I rewrote the queue consumer and the backpressure handling in Python, with FastAPI for the control surface and Kafka as the backbone.', ph: ['architecture sketch', 'ops console', 'alerting view'] },
-        forge: { title: 'Forge', subtitle: 'Component library and scaffolding CLI', desc: 'A toolbox so a six-person team can start a new page in minutes.', body1: 'A small product team was rebuilding the same buttons and forms on every page. Forge is the shared library plus a CLI that scaffolds a new page with the right pieces already wired.', body2: 'TypeScript, React and Vite. Documented with live examples so nobody has to ask how a component works.', ph: ['component gallery', 'CLI in action', 'docs page'] }
+        longa: { title: 'Longa', subtitle: 'Adaptive training plans for runners', desc: 'A running app that rebuilds your week when life gets in the way.', body1: 'Most training plans are static: miss one week and the schedule is wrong for the rest of the block. Longa builds the plan around your real life and rewrites it when you miss a run or move a race.', body2: 'I built it solo, end to end: the Go plan engine and the Next.js app. Every adjustment explains itself in plain language so runners trust what they see.', ph: ['week view', 'plan rewrite', 'race day screen'] },
+        morada: { title: 'Morada', subtitle: 'Condominium management for admins and residents', desc: 'A proptech app that puts building admins and residents on the same page.', body1: 'Admins were running the building on spreadsheets and group chats, and residents rarely knew what had been decided. Morada puts notices and bookings in one place both sides can see.', body2: 'Built feature-first with lint-enforced architecture boundaries and TDD end to end. Each feature owns its screens and its data access; the linter blocks imports that cross those lines, so the codebase stays readable as it grows.', ph: ['resident home', 'admin panel', 'notices and bookings'] },
+        relay: { title: 'Relay', subtitle: 'Event ingestion for a payments platform', desc: 'The pipe that keeps payment events flowing without piling up.', body1: 'Relay receives events from a payments platform and hands them to downstream services. Under load the old consumer fell behind and queues grew.', body2: 'I rewrote the queue consumer and the backpressure handling in Python, with FastAPI for the control surface and Kafka as the backbone.', ph: ['architecture sketch', 'ops console', 'alerting view'] },
+        forge: { title: 'Forge', subtitle: 'Component library and scaffolding CLI', desc: 'A toolbox so a small team can start a new page in minutes.', body1: 'A small product team was rebuilding the same buttons and forms on every page. Forge is the shared library plus a CLI that scaffolds a new page with the right pieces already wired.', body2: 'TypeScript, React and Vite. Documented with live examples so nobody has to ask how a component works.', ph: ['component gallery', 'CLI in action', 'docs page'] }
       }
     },
     pt: {
@@ -58,14 +58,14 @@
       avatarPh: 'foto',
       heroKicker: 'full-stack · Go · Python · .NET · React',
       heroTitle: 'Eu construo coisas pra web. E me divirto fazendo.',
-      heroSub: 'Oi, eu sou o Lucas. Gosto de pegar um problema bagunçado, transformar em software que funciona e colocar no ar. Backend, frontend, o que a coisa precisar.',
+      heroSub: 'Gosto de pegar um problema bagunçado e transformar em software que as pessoas realmente usam. Backend, frontend, o que a coisa precisar.',
       ctaWork: 'Ver trabalhos', ctaHire: 'Dar um oi',
       workLabel: 'Últimos trabalhos', seeAllShort: 'todos →', seeAll: 'Ver todos os trabalhos', openJob: 'Abrir projeto →',
       worksTitle: 'Todos os trabalhos', worksLead: 'Tudo o que construí e posso mostrar. Do mais novo pro mais antigo.',
       backHome: '← início', liveLink: 'Abrir ao vivo', repoLink: 'Código no GitHub ↗', imageLabel: 'Imagem',
-      aboutLabel: 'Sobre', aboutTitle: 'Brinco com código pra viver.',
+      aboutLabel: 'Sobre', aboutTitle: 'Oi, eu sou o Lucas. Brinco com código pra viver.',
       aboutP1: 'Engenheiro full-stack. Escrevo Go, Python e .NET no backend e React / Next.js no front. Entrei nisso porque construir coisas é divertido, e continua sendo.',
-      aboutP2: 'Gosto de briefs ambíguos e de assumi-los de ponta a ponta. No Longa isso significou escolher um motor de regras determinístico em vez de ML: menos mágica, mas cada mudança no plano consegue se explicar, e roda de graça em qualquer escala.',
+      aboutP2: 'Gosto de briefs ambíguos e de assumi-los de ponta a ponta. No Longa, por exemplo, escolhi um motor de regras em vez de ML: menos mágica, mas cada mudança no plano consegue se explicar, e roda de graça em qualquer escala.',
       gopherCaption: 'jogador 1 · lucas',
       heroAlt: 'Lucas em pixel art com armadura de TypeScript e calça de React, segurando espada de Go e escudo de MySQL',
       invTitle: 'Inventário',
@@ -86,10 +86,10 @@
       privP3: 'O formulário de contato envia nome, e-mail e mensagem para minha caixa de entrada. Uso apenas para responder e apago quando pedido.',
       footerNote: '© 2026 Lucas Dantas',
       jobs: {
-        longa: { title: 'Longa', subtitle: 'Planos de treino adaptativos para corredores', desc: 'Um app de corrida que refaz sua semana quando a vida atravessa o caminho.', body1: 'A maioria dos planos de treino é estática: perca uma semana e o cronograma fica errado pelo resto do ciclo. O Longa monta o plano em torno da sua vida real e o reescreve quando você perde um treino ou muda uma prova.', body2: 'Construí sozinho, de ponta a ponta: o motor de planos em Go e o app em Next.js por cima. Cada ajuste se explica em linguagem simples, pra que o corredor confie no que vê.', ph: ['visão da semana', 'plano reescrito', 'tela do dia da prova'] },
-        morada: { title: 'Morada', subtitle: 'Gestão de condomínios para síndicos e moradores', desc: 'Um app proptech que coloca síndicos e moradores na mesma página.', body1: 'Dois perfis, um codebase: síndicos e moradores usam o mesmo app, mas veem telas diferentes. Construído feature-first, com fronteiras de arquitetura garantidas por lint e cobertura mínima de 80%.', body2: 'Cada feature é dona das suas telas, regras e acesso a dados; o linter bloqueia imports que cruzam essas linhas, então o código continua legível conforme cresce.', ph: ['home do morador', 'painel do síndico', 'avisos e reservas'] },
-        relay: { title: 'Relay', subtitle: 'Ingestão de eventos para uma plataforma de pagamentos', desc: 'O cano que mantém milhões de eventos de pagamento fluindo sem acumular.', body1: 'O Relay recebe eventos de uma plataforma de pagamentos e entrega para os serviços seguintes. Sob carga, o consumidor antigo ficava para trás e as filas cresciam.', body2: 'Reescrevi o consumidor de fila e o controle de backpressure em Python, com FastAPI na superfície de controle e Kafka como espinha dorsal.', ph: ['esboço da arquitetura', 'console de operação', 'tela de alertas'] },
-        forge: { title: 'Forge', subtitle: 'Biblioteca de componentes e CLI de scaffolding', desc: 'Uma caixa de ferramentas pra um time de seis pessoas começar uma página nova em minutos.', body1: 'Um time de produto pequeno refazia os mesmos botões e formulários em toda página. O Forge é a biblioteca compartilhada mais uma CLI que cria uma página nova já com as peças certas ligadas.', body2: 'TypeScript, React e Vite. Documentado com exemplos ao vivo pra ninguém precisar perguntar como um componente funciona.', ph: ['galeria de componentes', 'CLI em ação', 'página de docs'] }
+        longa: { title: 'Longa', subtitle: 'Planos de treino adaptativos para corredores', desc: 'Um app de corrida que refaz sua semana quando a vida atravessa o caminho.', body1: 'A maioria dos planos de treino é estática: perca uma semana e o cronograma fica errado pelo resto do ciclo. O Longa monta o plano em torno da sua vida real e o reescreve quando você perde um treino ou muda uma prova.', body2: 'Construí sozinho, de ponta a ponta: o motor de planos em Go e o app em Next.js. Cada ajuste se explica em linguagem simples, pra que o corredor confie no que vê.', ph: ['visão da semana', 'plano reescrito', 'tela do dia da prova'] },
+        morada: { title: 'Morada', subtitle: 'Gestão de condomínios para síndicos e moradores', desc: 'Um app proptech que coloca síndicos e moradores na mesma página.', body1: 'Os síndicos tocavam o prédio em planilhas e grupos de mensagem, e os moradores raramente sabiam o que tinha sido decidido. O Morada coloca avisos e reservas num lugar só, que os dois lados enxergam.', body2: 'Construído feature-first, com fronteiras de arquitetura garantidas por lint e TDD de ponta a ponta. Cada feature é dona das suas telas e do seu acesso a dados; o linter bloqueia imports que cruzam essas linhas, então o código continua legível conforme cresce.', ph: ['home do morador', 'painel do síndico', 'avisos e reservas'] },
+        relay: { title: 'Relay', subtitle: 'Ingestão de eventos para uma plataforma de pagamentos', desc: 'O cano que mantém os eventos de pagamento fluindo sem acumular.', body1: 'O Relay recebe eventos de uma plataforma de pagamentos e entrega para os serviços seguintes. Sob carga, o consumidor antigo ficava para trás e as filas cresciam.', body2: 'Reescrevi o consumidor de fila e o controle de backpressure em Python, com FastAPI na superfície de controle e Kafka como espinha dorsal.', ph: ['esboço da arquitetura', 'console de operação', 'tela de alertas'] },
+        forge: { title: 'Forge', subtitle: 'Biblioteca de componentes e CLI de scaffolding', desc: 'Uma caixa de ferramentas pra um time pequeno começar uma página nova em minutos.', body1: 'Um time de produto pequeno refazia os mesmos botões e formulários em toda página. O Forge é a biblioteca compartilhada mais uma CLI que cria uma página nova já com as peças certas ligadas.', body2: 'TypeScript, React e Vite. Documentado com exemplos ao vivo pra ninguém precisar perguntar como um componente funciona.', ph: ['galeria de componentes', 'CLI em ação', 'página de docs'] }
       }
     }
   };
@@ -482,8 +482,13 @@
   function renderKicker(text) {
     var node = $('heroKicker');
     node.textContent = '';
-    text.split(' · ').forEach(function (part, i) {
-      node.appendChild(el('span', 'kicker-part', (i ? '· ' : '') + part));
+    text.split(' · ').forEach(function (part) {
+      var tok = el('span', 'kicker-part');
+      var mark = el('span', 'kicker-mark');
+      mark.setAttribute('aria-hidden', 'true');
+      tok.appendChild(mark);
+      tok.appendChild(document.createTextNode(part));
+      node.appendChild(tok);
     });
   }
 
