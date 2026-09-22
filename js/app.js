@@ -177,16 +177,16 @@
   var HERO_PALETTE = { k: '#2A1A12', s: '#5C3A21', a: '#3178C6', A: '#A9CBF0', D: '#235A96', r: '#3A4756', R: '#61DAFB', t: '#2496ED', T: '#B5D8F8', W: '#9EE6F5', w: '#00ADD8', h: '#00758F', m: '#F29111' };
 
   var GEAR = [
-    { name: 'Go', lv: 11, kind: 'weapon', sprite: 'sword', colors: { p: '#00ADD8', l: '#9EE6F5' } },
-    { name: 'Python', lv: 9, kind: 'weapon', sprite: 'snake', colors: { p: '#3776AB', l: '#FFD43B' } },
-    { name: 'C#', lv: 8, kind: 'weapon', sprite: 'crossbow', colors: { p: '#512BD4', l: '#B7A6F5' } },
-    { name: 'Node', lv: 7, kind: 'weapon', sprite: 'bow', colors: { p: '#339933', l: '#9BD99B', b: '#9BD99B' } },
-    { name: 'TypeScript', lv: 9, kind: 'armor', sprite: 'armor', colors: { p: '#3178C6', l: '#A9CBF0', d: '#235A96' } },
-    { name: 'React', lv: 10, kind: 'pants', sprite: 'pants', colors: { p: '#3A4756', l: '#61DAFB', d: '#20232A' } },
-    { name: 'MySQL', lv: 8, kind: 'shield', sprite: 'shield', colors: { p: '#00758F', l: '#F29111' } },
-    { name: 'PostgreSQL', lv: 8, kind: 'shield', sprite: 'shield', colors: { p: '#336791', l: '#CFE0F0' } },
-    { name: 'Docker', lv: 7, kind: 'boots', sprite: 'boots', colors: { p: '#2496ED', l: '#B5D8F8', d: '#1A6DB0' } },
-    { name: 'AWS', lv: 6, kind: 'boots', sprite: 'boots', colors: { p: '#FF9900', l: '#FFD9A0', d: '#B86D00' } }
+    { name: 'Go', lv: 99, kind: 'weapon', sprite: 'sword', colors: { p: '#00ADD8', l: '#9EE6F5' } },
+    { name: 'Python', lv: 99, kind: 'weapon', sprite: 'snake', colors: { p: '#3776AB', l: '#FFD43B' } },
+    { name: 'C#', lv: 99, kind: 'weapon', sprite: 'crossbow', colors: { p: '#512BD4', l: '#B7A6F5' } },
+    { name: 'Node', lv: 99, kind: 'weapon', sprite: 'bow', colors: { p: '#339933', l: '#9BD99B', b: '#9BD99B' } },
+    { name: 'TypeScript', lv: 99, kind: 'armor', sprite: 'armor', colors: { p: '#3178C6', l: '#A9CBF0', d: '#235A96' } },
+    { name: 'React', lv: 99, kind: 'pants', sprite: 'pants', colors: { p: '#3A4756', l: '#61DAFB', d: '#20232A' } },
+    { name: 'MySQL', lv: 99, kind: 'shield', sprite: 'shield', colors: { p: '#00758F', l: '#F29111' } },
+    { name: 'PostgreSQL', lv: 99, kind: 'shield', sprite: 'shield', colors: { p: '#336791', l: '#CFE0F0' } },
+    { name: 'Docker', lv: 99, kind: 'boots', sprite: 'boots', colors: { p: '#2496ED', l: '#B5D8F8', d: '#1A6DB0' } },
+    { name: 'AWS', lv: 99, kind: 'boots', sprite: 'boots', colors: { p: '#FF9900', l: '#FFD9A0', d: '#B86D00' } }
   ];
 
   /* ---------- state ---------- */
