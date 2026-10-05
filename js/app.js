@@ -100,7 +100,7 @@
     { slug: 'longa', year: '2026', stack: 'React Native · Go · PostgreSQL · Fly.io', live: 'https://app.longa.run', repo: '', images: ['imgs/longa/01-week-view.webp', 'imgs/longa/02-full-plan.webp', 'imgs/longa/03-plan-rewrite.webp', 'imgs/longa/04-mobile.webp'] },
     { slug: 'morada', year: '2026', stack: 'React · TypeScript · Hono · PostgreSQL', live: 'https://morada-a6g.pages.dev', repo: 'https://github.com/Lucantas/morada-app', images: ['imgs/morada/01-resident-mobile.webp', 'imgs/morada/02-admin-mobile.webp'] },
     { slug: 'diariosg', year: '2026', stack: 'Go · React · Postgres · MCP · GCP · Terraform', live: '', repo: 'https://github.com/Lucantas/diario-sg', images: ['imgs/diariosg/01-inicio.webp', 'imgs/diariosg/02-filtros.webp', 'imgs/diariosg/03-busca.webp', 'imgs/diariosg/04-empresa-cadastro.webp', 'imgs/diariosg/05-empresa-pagamentos.webp', 'imgs/diariosg/06-alerta.webp', 'imgs/diariosg/07-proposicoes.webp', 'imgs/diariosg/08-proposicao.webp', 'imgs/diariosg/09-padroes.webp', 'imgs/diariosg/10-fornecedores.webp', 'imgs/diariosg/11-mcp.webp', 'imgs/diariosg/12-mobile.webp'] },
-    { slug: 'forge', year: '2023', stack: 'TypeScript · React · Vite', live: '', repo: 'https://github.com/Lucantas', images: [] }
+    { slug: 'forge', hidden: true, year: '2023', stack: 'TypeScript · React · Vite', live: '', repo: 'https://github.com/Lucantas', images: [] }
   ];
 
   /* Pixel maps: '.' is transparent, every other char is a palette key. */
@@ -229,7 +229,7 @@
   /* ---------- data ---------- */
   function jobList() {
     var dict = t();
-    return JOBS.map(function (j) {
+    return JOBS.filter(function (j) { return !j.hidden; }).map(function (j) {
       return Object.assign({}, j, dict.jobs[j.slug], { href: '#/trabalhos/' + j.slug });
     });
   }
