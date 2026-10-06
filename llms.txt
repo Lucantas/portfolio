@@ -12,7 +12,7 @@ The site is available in English (https://lucantas.github.io/portfolio/) and Bra
 
 ## Experience
 
-### Software Engineer · Personare (Jun 2022 – present)
+### Senior Software Engineer · Personare (Jun 2022 – present)
 
 - Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.
 - Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can't stop.

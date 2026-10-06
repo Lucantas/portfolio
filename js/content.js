@@ -24,7 +24,7 @@
         { value: '−30%', label: 'infrastructure cost' }
       ],
       xp: [
-        { role: 'Software Engineer', company: 'Personare', url: 'https://www.personare.com.br', period: 'Jun 2022 – present', place: 'Rio de Janeiro', points: [
+        { role: 'Senior Software Engineer', company: 'Personare', url: 'https://www.personare.com.br', period: 'Jun 2022 – present', place: 'Rio de Janeiro', points: [
           'Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.',
           'Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can\'t stop.',
           'Found and fixed security vulnerabilities in the website and the internal admin systems.'
@@ -90,7 +90,7 @@
         { value: '−30%', label: 'custo de infraestrutura' }
       ],
       xp: [
-        { role: 'Engenheiro de Software', company: 'Personare', url: 'https://www.personare.com.br', period: 'jun 2022 – atual', place: 'Rio de Janeiro', points: [
+        { role: 'Engenheiro de Software Sênior', company: 'Personare', url: 'https://www.personare.com.br', period: 'jun 2022 – atual', place: 'Rio de Janeiro', points: [
           'Desenhei e liderei a migração de ~15 APIs críticas de pagamento e carrinho de um monólito PHP para microsserviços em Go com AWS SAM/Lambda, da arquitetura à operação em produção.',
           'Migrei a integração de Notas Fiscais do sistema da prefeitura para o sistema nacional, um processo de faturamento que não pode parar.',
           'Mapeei e corrigi falhas de segurança no site e nos sistemas administrativos internos.'
