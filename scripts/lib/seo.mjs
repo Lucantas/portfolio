@@ -16,7 +16,8 @@ function personNode(P, lang) {
     jobTitle: P.DICT[lang].jobTitle,
     description: P.DICT[lang].aboutP1,
     sameAs: [SITE.github, SITE.linkedin],
-    knowsAbout: P.GEAR.map((g) => g.name).concat(['.NET', 'Next.js', 'React Native', 'Terraform', 'Google Cloud']),
+    knowsAbout: P.GEAR.map((g) => g.name).concat(['Microservices', 'Serverless', 'AWS Lambda', 'React Native', 'Google Cloud', 'Model Context Protocol']),
+    email: `mailto:${SITE.email}`,
     address: { '@type': 'PostalAddress', addressLocality: SITE.locality, addressRegion: SITE.region, addressCountry: SITE.country }
   };
   if (SITE.avatar) node.image = absoluteUrl(SITE, SITE.avatar);

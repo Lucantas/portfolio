@@ -192,6 +192,9 @@
     $('jobYear').textContent = job.year;
     $('jobTitle').textContent = job.title;
     $('jobSubtitle').textContent = job.subtitle;
+    var facts = $('jobFacts');
+    facts.textContent = '';
+    (job.facts || []).forEach(function (f) { facts.appendChild(el('li', '', f)); });
     $('jobBody1').textContent = job.body1;
     $('jobBody2').textContent = job.body2;
     var body3 = $('jobBody3');

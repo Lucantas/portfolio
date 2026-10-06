@@ -1,12 +1,32 @@
 # Lucas Dantas
 
-> Full-stack Engineer based in São Gonçalo, RJ, Brazil. Go, Python and .NET on the backend, React / Next.js on the front. Builds products end to end, from data pipelines and APIs to mobile and web apps.
+> Senior Backend Engineer based in São Gonçalo, RJ, Brazil. Open to senior backend roles · remote · UTC−3.
 
-Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.
+At Personare I moved ~15 payment and cart APIs off a PHP monolith to Go on AWS Lambda. Latency went from ~3s to milliseconds and infrastructure costs dropped about 30%, on routes used by millions of people.
+
+Backend engineer since 2017, freelancing since 2015. Go and serverless on AWS are home. I also write TypeScript and React when the product needs it, which is how I ship my side projects end to end. I got into this because building things is fun, and it still is.
 
 I like ambiguous briefs and owning them end to end. On Longa, for example, I picked a rules engine over ML: less magic, but every plan change can explain itself, and it runs on the device with zero inference cost.
 
 The site is available in English (https://lucantas.github.io/portfolio/) and Brazilian Portuguese (https://lucantas.github.io/portfolio/pt/).
+
+## Experience
+
+### Software Engineer · Personare (Jun 2022 – present)
+
+- Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.
+- Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can't stop.
+- Found and fixed security vulnerabilities in the website and the internal admin systems.
+
+Stack: Go · Node.js · TypeScript · AWS Lambda/SAM · Terraform · MySQL · PostgreSQL · Docker
+
+### Software Developer · Mundiware (Nov 2017 – Jun 2022)
+
+- Started as a web design technician and became a software developer within a year. Built web systems and applications on medium and large projects.
+
+### Freelance Web Developer · Self-employed (2015 – 2022)
+
+- Websites and web apps for clients in several industries, owning scope, deadlines and delivery on my own.
 
 ## Projects
 
@@ -16,6 +36,8 @@ The site is available in English (https://lucantas.github.io/portfolio/) and Bra
 
 ## Contact
 
+- Email: lucas.lucantas38@gmail.com
+- [Résumé (PDF)](https://lucantas.github.io/portfolio/resume.pdf)
 - [GitHub](https://github.com/Lucantas)
 - [LinkedIn](https://br.linkedin.com/in/lucantas)
 - [All work](https://lucantas.github.io/portfolio/work/)

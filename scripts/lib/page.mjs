@@ -16,6 +16,11 @@ function slot(ctx, job, i, eager) {
   return `<div class="slot">${inner}</div>`;
 }
 
+function facts(job, id) {
+  const items = (job.facts || []).map((f) => `<li>${e(f)}</li>`).join('');
+  return `<ul class="facts"${id ? ` id="${id}"` : ''}>${items}</ul>`;
+}
+
 function postBar(ctx, job) {
   return `<div class="post-bar"><span class="post-avatar" aria-hidden="true">LD</span><span class="post-handle">${e(ctx.P.SITE.handle)}</span><span class="post-year">${e(job.year)}</span></div>`;
 }
@@ -27,6 +32,7 @@ function jobCard(ctx, job, opts) {
     '<div class="post-body">',
     `<${heading}>${e(job.title)}</${heading}>`,
     `<p class="post-sub">${e(job.subtitle)}</p>`,
+    facts(job),
     opts.withDesc ? `<p class="post-desc">${e(job.desc)}</p>` : '',
     `<a class="post-open" href="${href(ctx.root, ctx.P.jobPath(ctx.lang, job.slug))}">${e(ctx.dict.openJob)}</a>`,
     '</div>'
@@ -54,6 +60,7 @@ function header(ctx) {
     <a href="${href(root, routes.home)}" class="logo"><span class="logo-mark" aria-hidden="true"></span>LUCAS DANTAS</a>
     <div class="nav-right">
       <div class="nav-links">
+        <a href="${href(root, routes.home)}#experience" class="nav-link">${e(dict.navXp)}</a>
         <a href="${href(root, routes.works)}" class="nav-link${page.view === 'works' ? ' active' : ''}">${e(dict.navWorks)}</a>
         <a href="${href(root, routes.home)}#about" class="nav-link">${e(dict.navAbout)}</a>
         <a href="${href(root, routes.home)}#contact" class="nav-link">${e(dict.navContact)}</a>
@@ -68,8 +75,37 @@ function header(ctx) {
 
 function contactLinks(ctx) {
   const { SITE } = ctx.P;
-  return `<a href="${SITE.github}" target="_blank" rel="noopener me">github ↗</a>
-      <a href="${SITE.linkedin}" target="_blank" rel="noopener me">linkedin ↗</a>`;
+  return `<a href="mailto:${SITE.email}">${e(SITE.email)}</a>
+      <a href="${SITE.linkedin}" target="_blank" rel="noopener me">linkedin ↗</a>
+      <a href="${SITE.github}" target="_blank" rel="noopener me">github ↗</a>`;
+}
+
+function resumeHref(ctx) {
+  return href(ctx.root, ctx.dict.resumeFile);
+}
+
+function xpEntry(entry) {
+  const company = entry.url ? `<a href="${e(entry.url)}" target="_blank" rel="noopener">${e(entry.company)}</a>` : e(entry.company);
+  const points = entry.points.map((pt) => `<li>${e(pt)}</li>`).join('');
+  return `<article class="xp-item">
+        <div class="xp-head"><h3>${e(entry.role)} · ${company}</h3><span class="xp-period">${e(entry.period)} · ${e(entry.place)}</span></div>
+        <ul class="xp-points">${points}</ul>${entry.stack ? `\n        <div class="xp-stack">${e(entry.stack)}</div>` : ''}
+      </article>`;
+}
+
+function experience(ctx) {
+  const { dict } = ctx;
+  const stats = dict.xpStats.map((st) => `<div class="stat"><span class="stat-value">${e(st.value)}</span><span class="stat-label">${e(st.label)}</span></div>`).join('');
+  return `<section id="experience" class="wrap xp">
+    <div class="feed-head">
+      <h2>${e(dict.xpTitle)}</h2>
+      <a href="${resumeHref(ctx)}" class="feed-all" target="_blank" rel="noopener">${e(dict.ctaResume)}</a>
+    </div>
+    <div class="stats">${stats}</div>
+    <div class="xp-list">
+      ${dict.xp.map(xpEntry).join('\n      ')}
+    </div>
+  </section>`;
 }
 
 function avatar(ctx) {
@@ -79,7 +115,7 @@ function avatar(ctx) {
 }
 
 function inventory(ctx) {
-  return ctx.P.GEAR.map((g, i) => `<div class="item" data-gear="${i}"><span class="item-name">${e(g.name)}</span><span class="item-lv">LV ${g.lv}</span><span class="item-slot">${e(ctx.dict.slots[g.kind])}</span></div>`).join('\n          ');
+  return ctx.P.GEAR.map((g, i) => `<div class="item" data-gear="${i}"><span class="item-name">${e(g.name)}</span><span class="item-slot">${e(ctx.dict.slots[g.kind])}</span></div>`).join('\n          ');
 }
 
 function homeMain(ctx) {
@@ -92,15 +128,19 @@ function homeMain(ctx) {
       ${avatar(ctx)}
       <div class="hero-copy">
         <div class="kicker">${kicker(dict.heroKicker)}</div>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>${e(dict.availability)}</p>
         <h1><span>${e(dict.heroTitle)}</span><span class="cursor" aria-hidden="true"></span></h1>
         <p class="hero-sub">${e(dict.heroSub)}</p>
         <div class="hero-ctas">
           <a href="${worksHref}" class="px-btn primary">${e(dict.ctaWork)}</a>
+          <a href="${resumeHref(ctx)}" class="px-btn ghost" target="_blank" rel="noopener">${e(dict.ctaResume)}</a>
           <button type="button" class="px-btn ghost" data-open-contact>${e(dict.ctaHire)}</button>
         </div>
       </div>
     </div>
   </section>
+
+  ${experience(ctx)}
 
   <section id="work" class="wrap feed">
     <div class="feed-head">
@@ -146,6 +186,7 @@ function homeMain(ctx) {
     <div class="contact-row">
       <button type="button" class="px-btn primary" data-open-contact>${e(dict.contactBtn)}</button>
       ${contactLinks(ctx).replace(/<a /g, '<a class="link-ul" ')}
+      <a class="link-ul" href="${resumeHref(ctx)}" target="_blank" rel="noopener">${e(dict.ctaResume)}</a>
     </div>
   </section>`;
 }
@@ -161,7 +202,7 @@ function worksMain(ctx) {
 }
 
 function drawerContent(ctx, job) {
-  if (!job) return { year: '', title: '', subtitle: '', bodies: ['', '', ''], stack: '', slides: '', dots: '', counter: '', links: '', pager: '' };
+  if (!job) return { year: '', title: '', subtitle: '', facts: facts({}, 'jobFacts'), bodies: ['', '', ''], stack: '', slides: '', dots: '', counter: '', links: '', pager: '' };
   const { dict, root } = ctx;
   const idx = ctx.jobs.findIndex((j) => j.slug === job.slug);
   const prev = ctx.jobs[idx - 1];
@@ -174,6 +215,7 @@ function drawerContent(ctx, job) {
     year: e(job.year),
     title: e(job.title),
     subtitle: e(job.subtitle),
+    facts: facts(job, 'jobFacts'),
     bodies: [job.body1, job.body2, job.body3 || ''].map(e),
     stack: e(job.stack),
     slides: job.ph.map((_, i) => `<div class="carousel-slide">${slot(ctx, job, i, i === 0)}</div>`).join(''),
@@ -208,6 +250,7 @@ function drawer(ctx) {
       <div class="drawer-body">
         <${job ? 'h1' : 'h2'} id="jobTitle">${c.title}</${job ? 'h1' : 'h2'}>
         <p class="drawer-sub" id="jobSubtitle">${c.subtitle}</p>
+        ${c.facts}
         <p class="drawer-p" id="jobBody1">${c.bodies[0]}</p>
         <p class="drawer-p" id="jobBody2">${c.bodies[1]}</p>
         <p class="drawer-p" id="jobBody3"${c.bodies[2] ? '' : ' hidden'}>${c.bodies[2]}</p>
@@ -226,8 +269,8 @@ function tabbar(ctx) {
   const home = href(root, routes.home);
   return `<nav class="tabbar" aria-label="Menu">
   ${tab(home, dict.tabHome, page.view === 'home')}
+  ${tab(`${home}#experience`, dict.tabXp, false)}
   ${tab(href(root, routes.works), dict.navWorks, page.view === 'works')}
-  ${tab(`${home}#about`, dict.navAbout, false)}
   ${tab(`${home}#contact`, dict.navContact, false)}
 </nav>`;
 }

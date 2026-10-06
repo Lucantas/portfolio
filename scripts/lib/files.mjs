@@ -32,10 +32,13 @@ export function llmsTxt(P) {
     const extra = [job.live && `live: ${job.live}`, job.repo && `source: ${job.repo}`].filter(Boolean).join(', ');
     return `- [${job.title}](${absoluteUrl(SITE, P.jobPath('en', job.slug))}): ${job.desc} Stack: ${job.stack}.${extra ? ` (${extra})` : ''}`;
   });
+  const experience = dict.xp.map((x) => [`### ${x.role} · ${x.company} (${x.period})`, '', ...x.points.map((pt) => `- ${pt}`), x.stack ? `\nStack: ${x.stack}` : ''].join('\n').trimEnd());
   const details = jobs.map((job) => [`### ${job.title}: ${job.subtitle}`, '', job.body1, '', job.body2, job.body3 ? `\n${job.body3}` : ''].join('\n').trimEnd());
   return `# ${SITE.name}
 
-> ${dict.jobTitle} based in ${SITE.locality}, ${SITE.region}, Brazil. Go, Python and .NET on the backend, React / Next.js on the front. Builds products end to end, from data pipelines and APIs to mobile and web apps.
+> ${dict.jobTitle} based in ${SITE.locality}, ${SITE.region}, Brazil. ${dict.availability}.
+
+${dict.heroSub}
 
 ${dict.aboutP1}
 
@@ -43,12 +46,18 @@ ${dict.aboutP2}
 
 The site is available in English (${SITE.url}) and Brazilian Portuguese (${absoluteUrl(SITE, P.ROUTES.pt.home)}).
 
+## Experience
+
+${experience.join('\n\n')}
+
 ## Projects
 
 ${projectLinks.join('\n')}
 
 ## Contact
 
+- Email: ${SITE.email}
+- [Résumé (PDF)](${absoluteUrl(SITE, dict.resumeFile)})
 - [GitHub](${SITE.github})
 - [LinkedIn](${SITE.linkedin})
 - [All work](${absoluteUrl(SITE, P.ROUTES.en.works)})

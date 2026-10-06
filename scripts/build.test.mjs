@@ -143,3 +143,51 @@ test('llms.txt summarises who Lucas is and links every project', () => {
   assert.match(txt, /^# Lucas Dantas\n\n> /);
   P.visibleJobs('en').forEach((job) => assert.ok(txt.includes(`](${P.SITE.url}work/${job.slug}/)`), job.slug));
 });
+
+test('home shows professional experience with the Personare migration numbers in both languages', () => {
+  for (const lang of ['en', 'pt']) {
+    const html = page(P.ROUTES[lang].home);
+    const xp = P.DICT[lang].xp;
+
+    assert.match(html, /<section id="experience"/);
+    xp.forEach((entry) => assert.ok(html.includes(entry.company), `${lang}: ${entry.company}`));
+    P.DICT[lang].xpStats.forEach((stat) => assert.ok(html.includes(stat.value), `${lang}: ${stat.value}`));
+  }
+});
+
+test('home links the resume in the page language', () => {
+  assert.ok(page('').includes(`href="${base}resume.pdf"`));
+  assert.ok(page('pt/').includes(`href="${base}curriculo.pdf"`));
+});
+
+test('home states availability and offers a direct email', () => {
+  for (const lang of ['en', 'pt']) {
+    const html = page(P.ROUTES[lang].home);
+
+    assert.ok(html.includes(P.DICT[lang].availability), lang);
+    assert.ok(html.includes(`href="mailto:${P.SITE.email}"`), lang);
+  }
+});
+
+test('inventory lists skills without fake levels', () => {
+  assert.doesNotMatch(page(''), /LV \d+/);
+});
+
+test('every project card and drawer shows its key facts', () => {
+  const job = P.visibleJobs('en').find((j) => j.slug === 'morada');
+  const card = page('work/');
+  const drawer = page('work/morada/');
+
+  job.facts.forEach((fact) => {
+    assert.ok(card.includes(fact), `card: ${fact}`);
+    assert.ok(drawer.includes(fact), `drawer: ${fact}`);
+  });
+});
+
+test('llms.txt lists the professional experience and only the stack shown on the site', () => {
+  const txt = read('llms.txt');
+
+  assert.match(txt, /\n## Experience\n/);
+  P.DICT.en.xp.forEach((entry) => assert.ok(txt.includes(entry.company), entry.company));
+  assert.doesNotMatch(txt, /\.NET|Python/);
+});
