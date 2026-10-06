@@ -36,7 +36,7 @@ Stack: Go · Node.js · TypeScript · AWS Lambda/SAM · Terraform · MySQL · Po
 
 ## Contact
 
-- Email: lucas.lucantas38@gmail.com
+- Email: lucantas.dev@gmail.com
 - [Résumé (PDF)](https://lucantas.github.io/portfolio/resume.pdf)
 - [GitHub](https://github.com/Lucantas)
 - [LinkedIn](https://br.linkedin.com/in/lucantas)

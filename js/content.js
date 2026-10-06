@@ -163,7 +163,7 @@
     avatar: '',
     github: 'https://github.com/Lucantas',
     linkedin: 'https://br.linkedin.com/in/lucantas',
-    email: 'lucas.lucantas38@gmail.com',
+    email: 'lucantas.dev@gmail.com',
     locality: 'São Gonçalo',
     region: 'RJ',
     country: 'BR',

@@ -6,7 +6,7 @@
   'use strict';
 
   var P = window.PORTFOLIO;
-  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/lucas.lucantas38@gmail.com';
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/lucantas.dev@gmail.com';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var SVG_NS = 'http://www.w3.org/2000/svg';
   var LEGACY_JOB_HASH = /^#\/trabalhos(?:\/([^/]+))?/;
