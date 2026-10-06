@@ -1,49 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="/portfolio/" data-lang="en" data-view="home" data-job="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lucas Dantas | Full-stack Engineer</title>
-<meta name="description" content="Full-stack engineer. Go, Python and .NET on the backend, React / Next.js on the front. I build things for the web and have fun doing it.">
-<link rel="icon" href="imgs/favicon.ico">
+<title>Lucas Dantas | Full-stack Engineer · Go, Python, .NET, React</title>
+<meta name="description" content="Lucas Dantas, full-stack engineer based in Rio de Janeiro, Brazil. Go, Python and .NET on the backend, React / Next.js on the front. See the projects I built end to end.">
+<meta name="author" content="Lucas Dantas">
+<link rel="canonical" href="https://lucantas.github.io/portfolio/">
+<link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/">
+<link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/">
+<link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Lucas Dantas">
+<meta property="og:title" content="Lucas Dantas | Full-stack Engineer · Go, Python, .NET, React">
+<meta property="og:description" content="Lucas Dantas, full-stack engineer based in Rio de Janeiro, Brazil. Go, Python and .NET on the backend, React / Next.js on the front. See the projects I built end to end.">
+<meta property="og:url" content="https://lucantas.github.io/portfolio/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:image" content="https://lucantas.github.io/portfolio/imgs/og/site.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lucas Dantas | Full-stack Engineer · Go, Python, .NET, React">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="icon" href="/portfolio/imgs/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="/portfolio/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://lucantas.github.io/portfolio/#person","name":"Lucas Dantas","url":"https://lucantas.github.io/portfolio/","jobTitle":"Full-stack Engineer","description":"Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.","sameAs":["https://github.com/Lucantas","https://br.linkedin.com/in/lucantas"],"knowsAbout":["Go","Python","C#","Node","TypeScript","React","MySQL","PostgreSQL","Docker","AWS",".NET","Next.js","React Native","Terraform","Google Cloud"],"address":{"@type":"PostalAddress","addressLocality":"São Gonçalo","addressRegion":"RJ","addressCountry":"BR"}},{"@type":"WebSite","@id":"https://lucantas.github.io/portfolio/#website","url":"https://lucantas.github.io/portfolio/","name":"Lucas Dantas","inLanguage":["en","pt-BR"],"author":{"@id":"https://lucantas.github.io/portfolio/#person"}},{"@type":"ProfilePage","@id":"https://lucantas.github.io/portfolio/#page","url":"https://lucantas.github.io/portfolio/","name":"Lucas Dantas | Full-stack Engineer · Go, Python, .NET, React","inLanguage":"en","mainEntity":{"@id":"https://lucantas.github.io/portfolio/#person"}}]}</script>
 </head>
 <body>
 
 <header class="site-header">
   <nav class="site-nav" aria-label="Main">
-    <a href="#/" class="logo" id="logoLink"><span class="logo-mark" aria-hidden="true"></span>LUCAS DANTAS</a>
+    <a href="/portfolio/" class="logo"><span class="logo-mark" aria-hidden="true"></span>LUCAS DANTAS</a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#/trabalhos" class="nav-link" id="navWorks" data-i18n="navWorks">Work</a>
-        <button type="button" class="nav-link" id="navAbout" data-i18n="navAbout">About</button>
-        <button type="button" class="nav-link" id="navContact" data-i18n="navContact">Contact</button>
+        <a href="/portfolio/work/" class="nav-link">Work</a>
+        <a href="/portfolio/#about" class="nav-link">About</a>
+        <a href="/portfolio/#contact" class="nav-link">Contact</a>
       </div>
       <div class="lang-seg" role="group" aria-label="Language">
-        <button type="button" id="langEn" class="active" aria-label="English">EN</button>
-        <button type="button" id="langPt" aria-label="Português">PT</button>
+        <a href="/portfolio/" hreflang="en" lang="en" aria-label="English" data-lang-link="en" class="active" aria-current="true">EN</a>
+        <a href="/portfolio/pt/" hreflang="pt-BR" lang="pt-BR" aria-label="Português" data-lang-link="pt">PT</a>
       </div>
     </div>
   </nav>
 </header>
 
 <main>
-
-<!-- ================= HOME ================= -->
-<div id="pageHome">
   <section id="hero" class="wrap hero">
     <div class="hero-row">
-      <div class="avatar" id="avatarSlot" hidden></div>
+      <div class="avatar" hidden></div>
       <div class="hero-copy">
-        <div class="kicker" id="heroKicker">full-stack · Go · Python · .NET · React</div>
-        <h1><span data-i18n="heroTitle">I build things for the web. And I have fun doing it.</span><span class="cursor" aria-hidden="true"></span></h1>
-        <p class="hero-sub" data-i18n="heroSub">I like taking a messy problem and turning it into software people actually use. Backend, frontend, whatever the thing needs.</p>
+        <div class="kicker"><span class="kicker-part"><span class="kicker-mark" aria-hidden="true"></span>full-stack</span><span class="kicker-part"><span class="kicker-mark" aria-hidden="true"></span>Go</span><span class="kicker-part"><span class="kicker-mark" aria-hidden="true"></span>Python</span><span class="kicker-part"><span class="kicker-mark" aria-hidden="true"></span>.NET</span><span class="kicker-part"><span class="kicker-mark" aria-hidden="true"></span>React</span></div>
+        <h1><span>I build things for the web. And I have fun doing it.</span><span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero-sub">I like taking a messy problem and turning it into software people actually use. Backend, frontend, whatever the thing needs.</p>
         <div class="hero-ctas">
-          <a href="#/trabalhos" class="px-btn primary" data-nav="works" data-i18n="ctaWork">See my work</a>
-          <button type="button" class="px-btn ghost" data-open-contact data-i18n="ctaHire">Say hi</button>
+          <a href="/portfolio/work/" class="px-btn primary">See my work</a>
+          <button type="button" class="px-btn ghost" data-open-contact>Say hi</button>
         </div>
       </div>
     </div>
@@ -51,13 +67,13 @@
 
   <section id="work" class="wrap feed">
     <div class="feed-head">
-      <h2 data-i18n="workLabel">Latest work</h2>
-      <a href="#/trabalhos" class="feed-all" data-nav="works" data-i18n="seeAllShort">all →</a>
+      <h2>Latest work</h2>
+      <a href="/portfolio/work/" class="feed-all">all →</a>
     </div>
-    <div id="featured"></div>
-    <div class="post-grid" id="secondaryGrid"></div>
+    <div id="featured"><article class="post clickable featured" data-slug="longa"><div class="post-cover"><div class="slot"><img src="/portfolio/imgs/longa/01-week-view.webp" alt="Longa: current week on desktop" width="1600" height="1000" loading="lazy"></div></div><div class="post-col"><div class="post-bar"><span class="post-avatar" aria-hidden="true">LD</span><span class="post-handle">lucantas</span><span class="post-year">2026</span></div><div class="post-body"><h3>Longa</h3><p class="post-sub">Training plans that adapt to how you actually ran</p><p class="post-desc">A running app that rewrites next week around what you actually did.</p><a class="post-open" href="/portfolio/work/longa/">Open project →</a></div></div></article></div>
+    <div class="post-grid"><article class="post clickable" data-slug="morada"><div class="post-bar"><span class="post-avatar" aria-hidden="true">LD</span><span class="post-handle">lucantas</span><span class="post-year">2026</span></div><div class="post-cover"><div class="slot"><img src="/portfolio/imgs/morada/01-resident-mobile.webp" alt="Morada: resident on mobile" width="1600" height="1000" loading="lazy"></div></div><div class="post-body"><h3>Morada</h3><p class="post-sub">Condominium management for admins and residents</p><a class="post-open" href="/portfolio/work/morada/">Open project →</a></div></article><article class="post clickable" data-slug="diariosg"><div class="post-bar"><span class="post-avatar" aria-hidden="true">LD</span><span class="post-handle">lucantas</span><span class="post-year">2026</span></div><div class="post-cover"><div class="slot"><img src="/portfolio/imgs/diariosg/01-inicio.webp" alt="Diário SG: home page with the new visual identity" width="1600" height="1000" loading="lazy"></div></div><div class="post-body"><h3>Diário SG</h3><p class="post-sub">São Gonçalo&#39;s official gazettes, made searchable</p><a class="post-open" href="/portfolio/work/diariosg/">Open project →</a></div></article></div>
     <div class="feed-more">
-      <a href="#/trabalhos" class="px-btn ghost" data-nav="works" data-i18n="seeAll">See all work</a>
+      <a href="/portfolio/work/" class="px-btn ghost">See all work</a>
     </div>
   </section>
 
@@ -65,114 +81,122 @@
     <div class="wrap about-inner">
       <div class="about-grid">
         <div class="about-copy">
-          <div class="kicker" data-i18n="aboutLabel">About</div>
-          <h2 data-i18n="aboutTitle">Hi, I'm Lucas. I play with code for a living.</h2>
-          <p data-i18n="aboutP1">Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.</p>
-          <p data-i18n="aboutP2">I like ambiguous briefs and owning them end to end. On Longa, for example, I picked a rules engine over ML: less magic, but every plan change can explain itself, and it runs on the device with zero inference cost.</p>
+          <div class="kicker">About</div>
+          <h2>Hi, I&#39;m Lucas. I play with code for a living.</h2>
+          <p>Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.</p>
+          <p>I like ambiguous briefs and owning them end to end. On Longa, for example, I picked a rules engine over ML: less magic, but every plan change can explain itself, and it runs on the device with zero inference cost.</p>
         </div>
         <div class="hero-frame-wrap">
           <div class="hero-frame">
-            <div id="heroSprite"></div>
-            <span class="hero-caption" data-i18n="gopherCaption">player 1 · lucas</span>
+            <div id="heroSprite" data-label="Pixel-art Lucas wearing TypeScript armor and React pants, holding a Go sword and a MySQL shield"></div>
+            <span class="hero-caption">player 1 · lucas</span>
           </div>
         </div>
       </div>
       <div class="inventory">
-        <h3 data-i18n="invTitle">Inventory</h3>
-        <div class="inv-grid" id="invGrid"></div>
+        <h3>Inventory</h3>
+        <div class="inv-grid">
+          <div class="item" data-gear="0"><span class="item-name">Go</span><span class="item-lv">LV 99</span><span class="item-slot">weapon</span></div>
+          <div class="item" data-gear="1"><span class="item-name">Python</span><span class="item-lv">LV 99</span><span class="item-slot">weapon</span></div>
+          <div class="item" data-gear="2"><span class="item-name">C#</span><span class="item-lv">LV 99</span><span class="item-slot">weapon</span></div>
+          <div class="item" data-gear="3"><span class="item-name">Node</span><span class="item-lv">LV 99</span><span class="item-slot">weapon</span></div>
+          <div class="item" data-gear="4"><span class="item-name">TypeScript</span><span class="item-lv">LV 99</span><span class="item-slot">armor</span></div>
+          <div class="item" data-gear="5"><span class="item-name">React</span><span class="item-lv">LV 99</span><span class="item-slot">pants</span></div>
+          <div class="item" data-gear="6"><span class="item-name">MySQL</span><span class="item-lv">LV 99</span><span class="item-slot">shield</span></div>
+          <div class="item" data-gear="7"><span class="item-name">PostgreSQL</span><span class="item-lv">LV 99</span><span class="item-slot">shield</span></div>
+          <div class="item" data-gear="8"><span class="item-name">Docker</span><span class="item-lv">LV 99</span><span class="item-slot">boots</span></div>
+          <div class="item" data-gear="9"><span class="item-name">AWS</span><span class="item-lv">LV 99</span><span class="item-slot">boots</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="wrap contact">
-    <div class="kicker" data-i18n="contactLabel">Contact</div>
-    <h2 data-i18n="contactTitle">Have something to build? Let's talk.</h2>
-    <p class="contact-lead" data-i18n="contactLead">Bring me something slow or half built. Tell me what you want to ship and I'll tell you how I'd approach it.</p>
+    <div class="kicker">Contact</div>
+    <h2>Have something to build? Let&#39;s talk.</h2>
+    <p class="contact-lead">Bring me something slow or half built. Tell me what you want to ship and I&#39;ll tell you how I&#39;d approach it.</p>
     <div class="contact-row">
-      <button type="button" class="px-btn primary" data-open-contact data-i18n="contactBtn">Say hi</button>
-      <a href="https://github.com/Lucantas" target="_blank" rel="noopener" class="link-ul">github ↗</a>
-      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener" class="link-ul">linkedin ↗</a>
+      <button type="button" class="px-btn primary" data-open-contact>Say hi</button>
+      <a class="link-ul" href="https://github.com/Lucantas" target="_blank" rel="noopener me">github ↗</a>
+      <a class="link-ul" href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener me">linkedin ↗</a>
     </div>
   </section>
-</div>
-
-<!-- ================= WORKS LIST ================= -->
-<div id="pageWorks" hidden>
-  <section class="wrap works">
-    <a href="#/" class="back-link" data-nav="home" data-i18n="backHome">← home</a>
-    <h1 data-i18n="worksTitle">All work</h1>
-    <p class="works-lead" data-i18n="worksLead">Everything I've built and can show. Newest first.</p>
-    <div class="works-grid" id="worksGrid"></div>
-  </section>
-</div>
-
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <span class="footer-note" data-i18n="footerNote">© 2026 Lucas Dantas</span>
+    <span class="footer-note">© 2026 Lucas Dantas</span>
     <div class="footer-links">
-      <button type="button" id="privacyOpen" data-i18n="privacyLink">privacy</button>
+      <button type="button" id="privacyOpen">privacy</button>
     </div>
   </div>
   <div class="mobile-pad" aria-hidden="true"></div>
 </footer>
 
-<!-- MOBILE TAB BAR -->
 <nav class="tabbar" aria-label="Menu">
-  <button type="button" class="tab active" id="tabHome" data-nav="home"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label" data-i18n="tabHome">Home</span></button>
-  <button type="button" class="tab" id="tabWorks" data-nav="works"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label" data-i18n="navWorks">Work</span></button>
-  <button type="button" class="tab" id="tabAbout" data-nav="about"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label" data-i18n="navAbout">About</span></button>
-  <button type="button" class="tab" id="tabContact" data-nav="contact"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label" data-i18n="navContact">Contact</span></button>
+  <a class="tab active" href="/portfolio/"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Home</span></a>
+  <a class="tab" href="/portfolio/work/"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Work</span></a>
+  <a class="tab" href="/portfolio/#about"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label">About</span></a>
+  <a class="tab" href="/portfolio/#contact"><span class="tab-dot" aria-hidden="true"></span><span class="tab-label">Contact</span></a>
 </nav>
 
-<!-- CONTACT MODAL -->
 <div class="scrim" id="contactScrim">
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="formTitle">
     <div class="panel-head">
       <div>
-        <h3 id="formTitle" data-i18n="formTitle">Get in touch</h3>
-        <p class="panel-sub" data-i18n="formSub">Tell me about your project. I usually reply within a day.</p>
+        <h3 id="formTitle">Get in touch</h3>
+        <p class="panel-sub">Tell me about your project. I usually reply within a day.</p>
       </div>
       <button type="button" class="x-btn" data-close-contact aria-label="Close">X</button>
     </div>
     <form class="form" id="contactForm" novalidate>
       <label class="field">
-        <span data-i18n="nameLabel">Name</span>
-        <input type="text" id="fName" name="name" autocomplete="name" data-i18n-ph="namePh" placeholder="Your name">
+        <span>Name</span>
+        <input type="text" id="fName" name="name" autocomplete="name" placeholder="Your name">
       </label>
       <label class="field">
-        <span data-i18n="emailLabel">Email</span>
-        <input type="email" id="fEmail" name="email" autocomplete="email" data-i18n-ph="emailPh" placeholder="you@company.com">
+        <span>Email</span>
+        <input type="email" id="fEmail" name="email" autocomplete="email" placeholder="you@company.com">
       </label>
       <label class="field">
-        <span data-i18n="msgLabel">Message</span>
-        <textarea id="fMsg" name="message" rows="4" data-i18n-ph="msgPh" placeholder="What are you trying to build?"></textarea>
+        <span>Message</span>
+        <textarea id="fMsg" name="message" rows="4" placeholder="What are you trying to build?"></textarea>
       </label>
       <div class="form-error" id="formError" role="alert"></div>
-      <button type="submit" class="px-btn primary" id="formSubmit" data-i18n="sendBtn">Send</button>
+      <button type="submit" class="px-btn primary" id="formSubmit">Send</button>
     </form>
     <div class="form-success" id="formSuccess">
-      <h3 data-i18n="successTitle">Message sent</h3>
-      <p data-i18n="successMsg">Thanks. I'll get back to you soon.</p>
-      <button type="button" class="btn-plain" id="sendAnother" data-i18n="sendAnother">Send another</button>
+      <h3>Message sent</h3>
+      <p>Thanks. I&#39;ll get back to you soon.</p>
+      <button type="button" class="btn-plain" id="sendAnother">Send another</button>
     </div>
     <div class="panel-foot">
-      <span data-i18n="orReach">or reach me on</span>
-      <a href="https://github.com/Lucantas" target="_blank" rel="noopener">github ↗</a>
-      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener">linkedin ↗</a>
+      <span>or reach me on</span>
+      <a href="https://github.com/Lucantas" target="_blank" rel="noopener me">github ↗</a>
+      <a href="https://br.linkedin.com/in/lucantas" target="_blank" rel="noopener me">linkedin ↗</a>
     </div>
   </div>
 </div>
 
-<!-- JOB DRAWER -->
+<div class="scrim" id="privacyScrim">
+  <div class="panel privacy" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+    <div class="panel-head">
+      <h3 id="privTitle">Privacy</h3>
+      <button type="button" class="x-btn" id="privacyClose" aria-label="Close">X</button>
+    </div>
+    <p>This site sets no cookies and runs no analytics.</p>
+    <p>The language lives in the page address. Nothing is stored in your browser.</p>
+    <p>The contact form sends your name, email and message to my inbox. I use them only to reply, and I delete them on request.</p>
+  </div>
+</div>
+
 <div class="drawer-scrim" id="jobScrim">
   <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="jobTitle">
     <div class="drawer-bar">
       <span class="post-avatar" aria-hidden="true">LD</span>
       <span class="post-handle">lucantas</span>
       <span class="post-year" id="jobYear"></span>
-      <button type="button" class="x-btn" id="jobClose" aria-label="Close">X</button>
+      <a href="/portfolio/work/" class="x-btn" id="jobClose" role="button" aria-label="Close">X</a>
     </div>
     <div class="drawer-scroll" id="jobScroll">
       <div class="carousel"><div class="carousel-track" id="jobTrack"></div></div>
@@ -188,26 +212,14 @@
         <p class="drawer-p" id="jobBody2"></p>
         <p class="drawer-p" id="jobBody3" hidden></p>
         <div class="drawer-stack" id="jobStack"></div>
-        <div class="drawer-links" id="jobLinks"></div>
+        <div class="drawer-links" id="jobLinks" hidden></div>
         <div class="drawer-pager" id="jobPager"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PRIVACY MODAL -->
-<div class="scrim" id="privacyScrim">
-  <div class="panel privacy" role="dialog" aria-modal="true" aria-labelledby="privTitle">
-    <div class="panel-head">
-      <h3 id="privTitle" data-i18n="privTitle">Privacy</h3>
-      <button type="button" class="x-btn" id="privacyClose" aria-label="Close">X</button>
-    </div>
-    <p data-i18n="privP1">This site sets no cookies and runs no analytics.</p>
-    <p data-i18n="privP2">Your language choice is stored in your own browser and never leaves it.</p>
-    <p data-i18n="privP3">The contact form sends your name, email and message to my inbox. I use them only to reply, and I delete them on request.</p>
-  </div>
-</div>
-
-<script src="js/app.js"></script>
+<script src="/portfolio/js/content.js" defer></script>
+<script src="/portfolio/js/app.js" defer></script>
 </body>
 </html>

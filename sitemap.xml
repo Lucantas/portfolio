@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://lucantas.github.io/portfolio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/work/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/work/longa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/longa/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/longa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/longa/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/work/morada/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/morada/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/morada/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/morada/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/work/diariosg/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/diariosg/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/diariosg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/diariosg/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/pt/trabalhos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/pt/trabalhos/longa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/longa/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/longa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/longa/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/pt/trabalhos/morada/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/morada/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/morada/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/morada/"/>
+  </url>
+  <url>
+    <loc>https://lucantas.github.io/portfolio/pt/trabalhos/diariosg/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lucantas.github.io/portfolio/work/diariosg/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lucantas.github.io/portfolio/pt/trabalhos/diariosg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lucantas.github.io/portfolio/work/diariosg/"/>
+  </url>
+</urlset>

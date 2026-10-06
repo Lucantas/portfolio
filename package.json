@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/build.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

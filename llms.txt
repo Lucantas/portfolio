@@ -1,0 +1,47 @@
+# Lucas Dantas
+
+> Full-stack Engineer based in São Gonçalo, RJ, Brazil. Go, Python and .NET on the backend, React / Next.js on the front. Builds products end to end, from data pipelines and APIs to mobile and web apps.
+
+Full-stack engineer. I write Go, Python and .NET on the backend and React / Next.js on the front. I got into this because building things is fun, and it still is.
+
+I like ambiguous briefs and owning them end to end. On Longa, for example, I picked a rules engine over ML: less magic, but every plan change can explain itself, and it runs on the device with zero inference cost.
+
+The site is available in English (https://lucantas.github.io/portfolio/) and Brazilian Portuguese (https://lucantas.github.io/portfolio/pt/).
+
+## Projects
+
+- [Longa](https://lucantas.github.io/portfolio/work/longa/): A running app that rewrites next week around what you actually did. Stack: React Native · Go · PostgreSQL · Fly.io. (live: https://app.longa.run)
+- [Morada](https://lucantas.github.io/portfolio/work/morada/): A web app where the admin runs the building and residents pay the monthly fee via Pix. Stack: React · TypeScript · Hono · PostgreSQL. (live: https://morada-a6g.pages.dev, source: https://github.com/Lucantas/morada-app)
+- [Diário SG](https://lucantas.github.io/portfolio/work/diariosg/): Splits São Gonçalo's official gazettes into searchable acts, tracks City Council bills, checks each company against other public data and emails alerts. Stack: Go · React · Postgres · MCP · GCP · Terraform. (source: https://github.com/Lucantas/diario-sg)
+
+## Contact
+
+- [GitHub](https://github.com/Lucantas)
+- [LinkedIn](https://br.linkedin.com/in/lucantas)
+- [All work](https://lucantas.github.io/portfolio/work/)
+
+## Project details
+
+### Longa: Training plans that adapt to how you actually ran
+
+Most training plans are static. Skip runs and the schedule ignores it. Longa builds a plan from a short assessment and, when you log an incomplete long run, a lost week or an injury, rewrites the weeks ahead with less volume and hard sessions turned easy. It never touches the current week or the race date.
+
+I built it solo, end to end: an Expo/React Native app that runs on web and Android, a Go API on Fly.io with Postgres, and a dependency-free TypeScript plan engine that runs on the device. Every change explains itself in plain language, so the runner knows why the week looks different.
+
+It also records runs by GPS with a map, imports from Health Connect, syncs local-first with last-write-wins and bills through Stripe, in three languages. It's live on the web and still pre-launch: Android passes the end-to-end suite but isn't in the store yet.
+
+### Morada: Condominium management for admins and residents
+
+I built it for a real small building. The admin registers apartments and residents, issues the monthly fee, records expenses with their proofs and sends notices. Residents see their receipts, pay via Pix, upload the proof and follow the building's balance.
+
+The ledger is keyed by apartment rather than by person, so a resident can move out and the unit keeps its whole history. It's TypeScript end to end: React 19 on Cloudflare Pages, a Hono API on Fly.io, Postgres on Neon and proofs on R2. Everything scales to zero, so it costs about nothing to run.
+
+I built it feature-first, with lint enforcing the boundaries in both apps, and test-first the whole way: 900+ tests behind an 80% coverage gate, Playwright end to end in CI, and a check that ties every commit to a written spec. When main goes green it deploys itself.
+
+### Diário SG: São Gonçalo's official gazettes, made searchable
+
+São Gonçalo publishes two official gazettes, one from City Hall and one from the City Council, as long PDFs that hardly anyone reads. I built a pipeline that downloads each edition, runs OCR on scanned pages, splits it into acts like appointments, contracts, tenders and decrees, and indexes them for Portuguese full-text search. My local index holds 5,286 editions since 2010, about 162,000 acts. A second collector pulls nearly 50,000 City Council bills from 2014 on, works out each one's stage from its procedural history and links a bill to the law it became, so you can see which ones have sat in committee for months.
+
+You can search by name, CNPJ or subject and filter by act type, gazette, agency and theme, like the environment. A company's page puts the acts that cite it next to its federal tax registry record, CGU sanctions, TCE-RJ payments, City Hall spending commitments and PNCP contracts. Dashboards rank the largest suppliers and flag patterns worth a second look, like a no-bid purchase split into smaller ones or a newly opened company that gets an environmental licence. Save a term, CNPJ or process number, or just a set of filters, and you get an email when a new edition mentions it, or follow any search over RSS.
+
+There's also an MCP server. Each person generates a key and plugs the gazette into Claude, ChatGPT or Cursor, with 12 tools to search, read and cross-check acts. It's written in Go with clean architecture and Pub/Sub events between the scraper and the worker, and Postgres handles search with unaccent and trigram indexes. OCR output is cached in the bucket, which took reindexing a month from almost 10 minutes to 5 seconds. Terraform describes the whole Google Cloud stack, but I haven't deployed it yet.
