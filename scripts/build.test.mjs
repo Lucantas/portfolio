@@ -188,6 +188,9 @@ test('llms.txt lists the professional experience and only the stack shown on the
   const txt = read('llms.txt');
 
   assert.match(txt, /\n## Experience\n/);
-  P.DICT.en.xp.forEach((entry) => assert.ok(txt.includes(entry.company), entry.company));
-  assert.doesNotMatch(txt, /\.NET|Python/);
+  P.DICT.en.xp.forEach((entry) => {
+    assert.ok(txt.includes(entry.company), entry.company);
+    if (entry.stack) assert.ok(txt.includes(`Stack: ${entry.stack}`), entry.stack);
+  });
+  assert.doesNotMatch(txt, /Python/);
 });

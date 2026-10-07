@@ -17,12 +17,21 @@ The site is available in English (https://lucantas.github.io/portfolio/) and Bra
 - Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.
 - Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can't stop.
 - Found and fixed security vulnerabilities in the website and the internal admin systems.
+- Built the company's internal admin panel from scratch. The front end is Next.js/React with Google sign-in and per-resource permissions. The API is Go on 15 Lambdas, with clean architecture, an 80% coverage gate and an audit trail. It covers users, subscriptions, offers, coupons and business metrics.
+- Expanded observability across 11 serverless services: CloudWatch alarms for errors, latency, throughput and memory, error metrics from structured logs and severity-based alerts, all as code. Later removed noisy alarms in 9 services.
+- Built the eclipses endpoint for the Go astrology-calculation APIs (Swiss Ephemeris), placing each eclipse in the user's natal chart houses, and migrated the Professional Chart from legacy PHP to Go, proving parity with tests that diff its output against the legacy one.
 
-Stack: Go · Node.js · TypeScript · AWS Lambda/SAM · Terraform · MySQL · PostgreSQL · Docker
+Stack: Go · Node.js · TypeScript · Next.js · React · AWS Lambda/SAM · AppSync GraphQL · CloudWatch · Terraform · MySQL · PostgreSQL · DynamoDB · Docker
 
 ### Software Developer · Mundiware (Nov 2017 – Jun 2022)
 
-- Started as a web design technician and became a software developer within a year. Built web systems and applications on medium and large projects.
+- Started as a web design technician and became a software developer within a year.
+- Migrated the ad management system for print newspaper and online classifieds from Visual Basic to .NET Core with a web front end.
+- Built the TV ad management module.
+- Built ETLs that bring ads from several suppliers into the online classifieds automatically.
+- Extended the company's in-house template language with features that made web development easier and rendering lighter.
+
+Stack: C# · .NET Core · SQL Server · Visual Basic
 
 ### Freelance Web Developer · Self-employed (2015 – 2022)
 

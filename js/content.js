@@ -27,11 +27,18 @@
         { role: 'Senior Software Engineer', company: 'Personare', url: 'https://www.personare.com.br', period: 'Jun 2022 – present', place: 'Rio de Janeiro', points: [
           'Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.',
           'Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can\'t stop.',
-          'Found and fixed security vulnerabilities in the website and the internal admin systems.'
-        ], stack: 'Go · Node.js · TypeScript · AWS Lambda/SAM · Terraform · MySQL · PostgreSQL · Docker' },
+          'Found and fixed security vulnerabilities in the website and the internal admin systems.',
+          'Built the company\'s internal admin panel from scratch. The front end is Next.js/React with Google sign-in and per-resource permissions. The API is Go on 15 Lambdas, with clean architecture, an 80% coverage gate and an audit trail. It covers users, subscriptions, offers, coupons and business metrics.',
+          'Expanded observability across 11 serverless services: CloudWatch alarms for errors, latency, throughput and memory, error metrics from structured logs and severity-based alerts, all as code. Later removed noisy alarms in 9 services.',
+          'Built the eclipses endpoint for the Go astrology-calculation APIs (Swiss Ephemeris), placing each eclipse in the user\'s natal chart houses, and migrated the Professional Chart from legacy PHP to Go, proving parity with tests that diff its output against the legacy one.'
+        ], stack: 'Go · Node.js · TypeScript · Next.js · React · AWS Lambda/SAM · AppSync GraphQL · CloudWatch · Terraform · MySQL · PostgreSQL · DynamoDB · Docker' },
         { role: 'Software Developer', company: 'Mundiware', url: '', period: 'Nov 2017 – Jun 2022', place: 'Rio de Janeiro', points: [
-          'Started as a web design technician and became a software developer within a year. Built web systems and applications on medium and large projects.'
-        ], stack: '' },
+          'Started as a web design technician and became a software developer within a year.',
+          'Migrated the ad management system for print newspaper and online classifieds from Visual Basic to .NET Core with a web front end.',
+          'Built the TV ad management module.',
+          'Built ETLs that bring ads from several suppliers into the online classifieds automatically.',
+          'Extended the company\'s in-house template language with features that made web development easier and rendering lighter.'
+        ], stack: 'C# · .NET Core · SQL Server · Visual Basic' },
         { role: 'Freelance Web Developer', company: 'Self-employed', url: '', period: '2015 – 2022', place: 'São Gonçalo, RJ', points: [
           'Websites and web apps for clients in several industries, owning scope, deadlines and delivery on my own.'
         ], stack: '' }
@@ -93,11 +100,18 @@
         { role: 'Engenheiro de Software Sênior', company: 'Personare', url: 'https://www.personare.com.br', period: 'jun 2022 – atual', place: 'Rio de Janeiro', points: [
           'Desenhei e liderei a migração de ~15 APIs críticas de pagamento e carrinho de um monólito PHP para microsserviços em Go com AWS SAM/Lambda, da arquitetura à operação em produção.',
           'Migrei a integração de Notas Fiscais do sistema da prefeitura para o sistema nacional, um processo de faturamento que não pode parar.',
-          'Mapeei e corrigi falhas de segurança no site e nos sistemas administrativos internos.'
-        ], stack: 'Go · Node.js · TypeScript · AWS Lambda/SAM · Terraform · MySQL · PostgreSQL · Docker' },
+          'Mapeei e corrigi falhas de segurança no site e nos sistemas administrativos internos.',
+          'Criei do zero o painel administrativo interno da empresa. O front é em Next.js/React, com login Google e permissões por recurso. A API é em Go, com 15 Lambdas, arquitetura limpa, gate de 80% de cobertura e trilha de auditoria. O painel cobre usuários, assinaturas, ofertas, cupons e métricas de negócio.',
+          'Ampliei a observabilidade de 11 serviços serverless: alarmes no CloudWatch para erro, latência, volume e memória, métricas de erro a partir de logs estruturados e alertas por severidade, tudo como código. Depois removi alarmes ruidosos em 9 serviços.',
+          'Nas APIs de cálculo astrológico em Go, sobre Swiss Ephemeris, criei o endpoint de eclipses, que posiciona cada eclipse nas casas do mapa natal, e migrei o Mapa Profissional do PHP legado para Go, provando a paridade com testes que comparam a saída com a do legado.'
+        ], stack: 'Go · Node.js · TypeScript · Next.js · React · AWS Lambda/SAM · AppSync GraphQL · CloudWatch · Terraform · MySQL · PostgreSQL · DynamoDB · Docker' },
         { role: 'Programador', company: 'Mundiware', url: '', period: 'nov 2017 – jun 2022', place: 'Rio de Janeiro', points: [
-          'Entrei como técnico em web design e virei programador em menos de um ano. Desenvolvi sistemas e aplicações web em projetos de médio e grande porte.'
-        ], stack: '' },
+          'Entrei como técnico em web design e virei programador em menos de um ano.',
+          'Migrei o sistema de gestão de anúncios do jornal impresso e dos classificados online de Visual Basic para .NET Core com front-end web.',
+          'Criei o módulo de gestão de anúncios para televisão.',
+          'Construí ETLs que levam anúncios de vários fornecedores para os classificados online de forma automática.',
+          'Evoluí a linguagem de template própria da empresa com recursos que facilitaram o desenvolvimento web e deixaram as renderizações mais leves.'
+        ], stack: 'C# · .NET Core · SQL Server · Visual Basic' },
         { role: 'Desenvolvedor web freelancer', company: 'Autônomo', url: '', period: '2015 – 2022', place: 'São Gonçalo, RJ', points: [
           'Sites e aplicações web para clientes de vários segmentos, cuidando sozinho de escopo, prazos e entrega.'
         ], stack: '' }
