@@ -3,41 +3,46 @@
 
   var DICT = {
     en: {
-      metaTitleHome: 'Lucas Dantas | Senior Backend Engineer · Go, AWS, TypeScript',
-      metaDescHome: 'Lucas Dantas, senior backend engineer in Rio de Janeiro, Brazil. Go and serverless on AWS, TypeScript and React when the product needs it. Open to remote roles.',
-      metaTitleWorks: 'Work | Lucas Dantas, Senior Backend Engineer',
+      metaTitleHome: 'Lucas Dantas | Backend Engineer · Go, AWS & Payments',
+      metaDescHome: 'Lucas Dantas, backend engineer in Rio de Janeiro, Brazil. Payments, billing and subscriptions in Go on AWS. Open to remote roles.',
+      metaTitleWorks: 'Work | Lucas Dantas, Backend Engineer',
       metaDescWorks: 'Projects built end to end by Lucas Dantas: Longa (adaptive running plans), Morada (condominium management) and Diário SG (searchable official gazettes).',
       metaTitleJob: '{title}: {subtitle} | Lucas Dantas',
-      jobTitle: 'Senior Backend Engineer',
+      jobTitle: 'Backend Engineer',
       langName: 'English',
       navWorks: 'Work', navXp: 'Experience', tabXp: 'Career', navAbout: 'About', navContact: 'Contact', tabHome: 'Home',
-      heroKicker: 'backend · Go · AWS · TypeScript',
+      heroKicker: 'backend · Go · AWS · payments',
       availability: 'Open to senior backend roles · remote · UTC−3',
       heroTitle: 'I build fast, cheap-to-run backends in Go.',
-      heroSub: 'At Personare I moved ~15 payment and cart APIs off a PHP monolith to Go on AWS Lambda. Latency went from ~3s to milliseconds and infrastructure costs dropped about 30%, on routes used by millions of people.',
+      heroSub: 'At Personare I moved ~15 payment and cart APIs off a PHP monolith to Go on AWS Lambda. Infrastructure costs dropped about 30% and read routes went from ~3s to ~5 ms. Checkout now handles ~10M requests and ~11k paid orders a month.',
       ctaWork: 'See my work', ctaResume: 'Résumé (PDF)', ctaHire: 'Say hi',
       resumeFile: 'resume.pdf',
       xpLabel: 'Experience', xpTitle: 'Where I\'ve worked',
       xpStats: [
         { value: '~15', label: 'payment & cart APIs moved to Go' },
-        { value: '3s → ms', label: 'latency on critical routes' },
+        { value: '~5 ms', label: 'p50 on read routes, down from ~3s' },
         { value: '−30%', label: 'infrastructure cost' }
       ],
       xp: [
-        { role: 'Senior Software Engineer', company: 'Personare', url: 'https://www.personare.com.br', period: 'Jun 2022 – present', place: 'Rio de Janeiro', points: [
-          'Designed and led the migration of ~15 critical payment and cart APIs from a PHP monolith to Go microservices on AWS SAM/Lambda, from the architecture to running them in production.',
-          'Moved the invoice (Nota Fiscal) integration from the city system to the national one, a billing process the company can\'t stop.',
-          'Found and fixed security vulnerabilities in the website and the internal admin systems.',
-          'Built the company\'s internal admin panel from scratch. The front end is Next.js/React with Google sign-in and per-resource permissions. The API is Go on 15 Lambdas, with clean architecture, an 80% coverage gate and an audit trail. It covers users, subscriptions, offers, coupons and business metrics.',
-          'Expanded observability across 11 serverless services: CloudWatch alarms for errors, latency, throughput and memory, error metrics from structured logs and severity-based alerts, all as code. Later removed noisy alarms in 9 services.',
-          'Built the eclipses endpoint for the Go astrology-calculation APIs (Swiss Ephemeris), placing each eclipse in the user\'s natal chart houses, and migrated the Professional Chart from legacy PHP to Go, proving parity with tests that diff its output against the legacy one.'
+        { role: 'Software Engineer', company: 'Personare', url: 'https://www.personare.com.br', period: 'Jun 2022 – present', place: 'Rio de Janeiro', points: [
+          'Acted as backend lead on an engineering team of up to 10, reporting directly to the CTO. Bootstrapped the Go backend monorepo and its conventions (spec-first workflow, dependency boundaries, 80% coverage gates, OpenAPI contract tests), which the team adopted as its standard.',
+          'Ran the spike, wrote the stories and led the migration of ~15 payment and cart APIs from a PHP monolith to Go on AWS Lambda in 8 weeks, redesigning a rigid API contract with no rollback needed. Checkout now serves ~10M requests and ~11k paid orders a month across card, Pix, PayPal, Apple Pay and Google Pay.',
+          'Moved post-purchase work (confirmation email, analytics, Salesforce sync) off the critical path onto EventBridge and SQS with DLQs, so a downstream failure never blocks a purchase. Added idempotency to retried flows and a transactional outbox.',
+          'Designed and shipped invoice issuing on Brazil\'s national e-invoice system (NFS-e) ahead of its 2026 legal deadline: ~11k invoices a month, 115k+ so far, 0.03% left pending.',
+          'Root-caused a 27% drop in an email alert product sending ~2.2M emails a day within 3 hours of detection, recalculated 1.25M users and wrote the postmortem.',
+          'Introduced alarms as code across 12+ services, where detection used to depend on users complaining, then removed ~107 noisy alarms so the rest get acted on.',
+          'Hardened payment security: a legacy card vault stopped retaining PAN and CVV, fixed open-redirect and authorization flaws, and led the same-day patch of a critical PHP-FPM RCE.',
+          'Moved a legacy WordPress commerce service from a single EC2 host to ECS Fargate and Aurora Serverless v2 with Terraform, runbooks and a rehearsed rollback.',
+          'Initiated and co-led the new internal admin (Next.js, plus Go on 15 Lambdas with an audit trail) that gives Support, Marketing and Product self-service.',
+          'On the Go astrology APIs (100M+ invocations a month), built the eclipses endpoint and migrated the Professional Chart from PHP with tests that diff it against the legacy output.'
         ], stack: 'Go · Node.js · TypeScript · Next.js · React · AWS Lambda/SAM · AppSync GraphQL · CloudWatch · Terraform · MySQL · PostgreSQL · DynamoDB · Docker' },
         { role: 'Software Developer', company: 'Mundiware', url: '', period: 'Nov 2017 – Jun 2022', place: 'Rio de Janeiro', points: [
           'Started as a web design technician and became a software developer within a year.',
-          'Migrated the ad management system for print newspaper and online classifieds from Visual Basic to .NET Core with a web front end.',
+          'Migrated the ad management system behind the print classifieds of 5+ newspapers and the online classifieds of 3+ from Visual Basic to .NET Core with a web front end.',
           'Built the TV ad management module.',
           'Built ETLs that bring ads from several suppliers into the online classifieds automatically.',
-          'Extended the company\'s in-house template language with features that made web development easier and rendering lighter.'
+          'Extended the company\'s in-house template language with features that made web development easier and rendering lighter.',
+          'Trained two web designers.'
         ], stack: 'C# · .NET Core · SQL Server · Visual Basic' },
         { role: 'Freelance Web Developer', company: 'Self-employed', url: '', period: '2015 – 2022', place: 'São Gonçalo, RJ', points: [
           'Websites and web apps for clients in several industries, owning scope, deadlines and delivery on my own.'
@@ -76,41 +81,46 @@
       }
     },
     pt: {
-      metaTitleHome: 'Lucas Dantas | Engenheiro backend sênior · Go, AWS, TypeScript',
-      metaDescHome: 'Lucas Dantas, engenheiro backend sênior no Rio de Janeiro. Go e serverless na AWS, TypeScript e React quando o produto pede. Aberto a vagas remotas.',
-      metaTitleWorks: 'Trabalhos | Lucas Dantas, engenheiro backend sênior',
+      metaTitleHome: 'Lucas Dantas | Engenheiro backend · Go, AWS e pagamentos',
+      metaDescHome: 'Lucas Dantas, engenheiro backend no Rio de Janeiro. Pagamentos, faturamento e assinaturas em Go na AWS. Aberto a vagas remotas.',
+      metaTitleWorks: 'Trabalhos | Lucas Dantas, engenheiro backend',
       metaDescWorks: 'Projetos de Lucas Dantas, de ponta a ponta: Longa (planos de corrida adaptativos), Morada (gestão de condomínios) e Diário SG (Diários Oficiais pesquisáveis).',
       metaTitleJob: '{title}: {subtitle} | Lucas Dantas',
-      jobTitle: 'Engenheiro backend sênior',
+      jobTitle: 'Engenheiro backend',
       langName: 'Português',
       navWorks: 'Trabalhos', navXp: 'Experiência', tabXp: 'Carreira', navAbout: 'Sobre', navContact: 'Contato', tabHome: 'Início',
-      heroKicker: 'backend · Go · AWS · TypeScript',
+      heroKicker: 'backend · Go · AWS · pagamentos',
       availability: 'Aberto a vagas sênior de backend · remoto · UTC−3',
       heroTitle: 'Construo backends em Go rápidos e baratos de rodar.',
-      heroSub: 'Na Personare, tirei ~15 APIs de pagamento e carrinho de um monólito PHP e levei para Go na AWS Lambda. A latência foi de ~3s para milissegundos e o custo de infraestrutura caiu cerca de 30%, em rotas usadas por milhões de pessoas.',
+      heroSub: 'Na Personare, tirei ~15 APIs de pagamento e carrinho de um monólito PHP e levei para Go na AWS Lambda. O custo de infraestrutura caiu cerca de 30% e as rotas de leitura foram de ~3s para ~5 ms. Hoje o checkout atende ~10 milhões de requisições e ~11 mil pedidos pagos por mês.',
       ctaWork: 'Ver trabalhos', ctaResume: 'Currículo (PDF)', ctaHire: 'Dar um oi',
       resumeFile: 'curriculo.pdf',
       xpLabel: 'Experiência', xpTitle: 'Onde trabalhei',
       xpStats: [
         { value: '~15', label: 'APIs de pagamento e carrinho migradas para Go' },
-        { value: '3s → ms', label: 'latência nas rotas críticas' },
+        { value: '~5 ms', label: 'p50 nas rotas de leitura, antes ~3s' },
         { value: '−30%', label: 'custo de infraestrutura' }
       ],
       xp: [
-        { role: 'Engenheiro de Software Sênior', company: 'Personare', url: 'https://www.personare.com.br', period: 'jun 2022 – atual', place: 'Rio de Janeiro', points: [
-          'Desenhei e liderei a migração de ~15 APIs críticas de pagamento e carrinho de um monólito PHP para microsserviços em Go com AWS SAM/Lambda, da arquitetura à operação em produção.',
-          'Migrei a integração de Notas Fiscais do sistema da prefeitura para o sistema nacional, um processo de faturamento que não pode parar.',
-          'Mapeei e corrigi falhas de segurança no site e nos sistemas administrativos internos.',
-          'Criei do zero o painel administrativo interno da empresa. O front é em Next.js/React, com login Google e permissões por recurso. A API é em Go, com 15 Lambdas, arquitetura limpa, gate de 80% de cobertura e trilha de auditoria. O painel cobre usuários, assinaturas, ofertas, cupons e métricas de negócio.',
-          'Ampliei a observabilidade de 11 serviços serverless: alarmes no CloudWatch para erro, latência, volume e memória, métricas de erro a partir de logs estruturados e alertas por severidade, tudo como código. Depois removi alarmes ruidosos em 9 serviços.',
-          'Nas APIs de cálculo astrológico em Go, sobre Swiss Ephemeris, criei o endpoint de eclipses, que posiciona cada eclipse nas casas do mapa natal, e migrei o Mapa Profissional do PHP legado para Go, provando a paridade com testes que comparam a saída com a do legado.'
+        { role: 'Engenheiro de Software', company: 'Personare', url: 'https://www.personare.com.br', period: 'jun 2022 – atual', place: 'Rio de Janeiro', points: [
+          'Atuei como referência de backend num time de engenharia de até 10 pessoas, reportando direto ao CTO. Criei o monorepo de backend em Go e suas convenções (spec antes do código, fronteiras de dependência, gate de 80% de cobertura, testes de contrato OpenAPI), adotadas pelo time como padrão.',
+          'Conduzi o spike, escrevi as histórias e liderei a migração de ~15 APIs de pagamento e carrinho de um monólito PHP para Go na AWS Lambda em 8 semanas, redesenhando um contrato de API engessado, sem precisar de rollback. Hoje o checkout atende ~10 milhões de requisições e ~11 mil pedidos pagos por mês, com cartão, Pix, PayPal, Apple Pay e Google Pay.',
+          'Tirei o pós-compra (e-mail de confirmação, analytics, envio ao Salesforce) do caminho crítico com EventBridge e SQS com DLQs: uma falha nesses fluxos nunca bloqueia a compra. Adicionei idempotência aos fluxos com retry e um transactional outbox.',
+          'Desenhei e entreguei a emissão de NFS-e no sistema nacional antes do prazo legal de 2026: ~11 mil notas por mês, mais de 115 mil emitidas, 0,03% pendentes.',
+          'Achei em 3 horas a causa de uma queda de 27% num produto de alertas que envia ~2,2 milhões de e-mails por dia, recalculei 1,25 milhão de usuários e escrevi o postmortem.',
+          'Criei alarmes como código em mais de 12 serviços onde a detecção dependia do usuário reclamar, e depois removi ~107 alarmes ruidosos para que os restantes fossem levados a sério.',
+          'Reforcei a segurança de pagamentos: um cofre de cartões legado parou de reter PAN e CVV, corrigi falhas de open redirect e de autorização e conduzi no mesmo dia a correção de uma RCE crítica no PHP-FPM.',
+          'Migrei um e-commerce em WordPress de um único EC2 para ECS Fargate e Aurora Serverless v2 com Terraform, runbooks e rollback ensaiado.',
+          'Propus e co-liderei o novo admin interno (Next.js, mais Go em 15 Lambdas com trilha de auditoria), que dá autonomia a Suporte, Marketing e Produto.',
+          'Nas APIs de astrologia em Go (mais de 100 milhões de invocações por mês), criei o endpoint de eclipses e migrei o Mapa Profissional do PHP com testes que comparam a saída com a do legado.'
         ], stack: 'Go · Node.js · TypeScript · Next.js · React · AWS Lambda/SAM · AppSync GraphQL · CloudWatch · Terraform · MySQL · PostgreSQL · DynamoDB · Docker' },
         { role: 'Programador', company: 'Mundiware', url: '', period: 'nov 2017 – jun 2022', place: 'Rio de Janeiro', points: [
           'Entrei como técnico em web design e virei programador em menos de um ano.',
-          'Migrei o sistema de gestão de anúncios do jornal impresso e dos classificados online de Visual Basic para .NET Core com front-end web.',
+          'Migrei o sistema de gestão de anúncios usado pelos classificados impressos de mais de 5 jornais e pelos classificados online de mais de 3, de Visual Basic para .NET Core com front-end web.',
           'Criei o módulo de gestão de anúncios para televisão.',
           'Construí ETLs que levam anúncios de vários fornecedores para os classificados online de forma automática.',
-          'Evoluí a linguagem de template própria da empresa com recursos que facilitaram o desenvolvimento web e deixaram as renderizações mais leves.'
+          'Evoluí a linguagem de template própria da empresa com recursos que facilitaram o desenvolvimento web e deixaram as renderizações mais leves.',
+          'Treinei dois web designers.'
         ], stack: 'C# · .NET Core · SQL Server · Visual Basic' },
         { role: 'Desenvolvedor web freelancer', company: 'Autônomo', url: '', period: '2015 – 2022', place: 'São Gonçalo, RJ', points: [
           'Sites e aplicações web para clientes de vários segmentos, cuidando sozinho de escopo, prazos e entrega.'
