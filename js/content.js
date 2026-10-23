@@ -192,7 +192,7 @@
     region: 'RJ',
     country: 'BR',
     featured: 'longa',
-    ogImage: { src: 'imgs/og/site.png?v=2', width: 1200, height: 630 }
+    ogImage: { src: 'imgs/og/site.png?v=3', width: 1200, height: 630 }
   };
 
   var ROUTES = {
