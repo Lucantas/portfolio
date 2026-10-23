@@ -16,7 +16,7 @@ The site is available in English (https://lucantas.github.io/portfolio/) and Bra
 
 - Acted as backend lead on an engineering team of up to 10, reporting directly to the CTO. Bootstrapped the Go backend monorepo and its conventions (spec-first workflow, dependency boundaries, 80% coverage gates, OpenAPI contract tests), which the team adopted as its standard.
 - Ran the spike, wrote the stories and led the migration of ~15 payment and cart APIs from a PHP monolith to Go on AWS Lambda in 8 weeks, redesigning a rigid API contract with no rollback needed. Checkout now serves ~10M requests and ~11k paid orders a month across card, Pix, PayPal, Apple Pay and Google Pay.
-- Moved post-purchase work (confirmation email, analytics, Salesforce sync) off the critical path onto EventBridge and SQS with DLQs, so a downstream failure never blocks a purchase. Added idempotency to retried flows and a transactional outbox.
+- Moved post-purchase work (confirmation email, analytics, Salesforce sync) off the critical path onto EventBridge and SQS with DLQs on the queue-backed steps, so a downstream failure never blocks a purchase. Added idempotency to retried flows and a transactional outbox.
 - Designed and shipped invoice issuing on Brazil's national e-invoice system (NFS-e) ahead of its 2026 legal deadline: ~11k invoices a month, 115k+ so far, 0.03% left pending.
 - Root-caused a 27% drop in an email alert product sending ~2.2M emails a day within 3 hours of detection, recalculated 1.25M users and wrote the postmortem.
 - Introduced alarms as code across 12+ services, where detection used to depend on users complaining, then removed ~107 noisy alarms so the rest get acted on.
